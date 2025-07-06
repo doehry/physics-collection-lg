@@ -1,0 +1,120 @@
+/**
+ * Theme Name: physics-collection-lg
+ * Author:     Daniel Oehry
+ * Template:   twentytwentyone
+ * Version:    0.1
+ */
+
+ :root {
+    /* Font Size */
+	--global--font-size-base: 1rem;
+	--global--font-size-xs: 0.9rem;
+	--global--font-size-sm: 0.95rem;
+	--global--font-size-md: 1rem;
+	--global--font-size-lg: 1.5rem;
+	--global--font-size-xl: 2rem;
+	--global--font-size-xxl: 2.6rem;
+	--global--font-size-xxxl: 4rem;
+	--global--font-size-page-title: var(--global--font-size-xxl);
+
+    /* Headings */
+	--heading--font-size-h6: var(--global--font-size-xs);
+	--heading--font-size-h5: var(--global--font-size-sm);
+	--heading--font-size-h4: var(--global--font-size-lg);
+	--heading--font-size-h3: calc(1.25 * var(--global--font-size-lg));
+	--heading--font-size-h2: var(--global--font-size-xl);
+	--heading--font-size-h1: var(--global--font-size-page-title);
+
+	/* Block: Latest posts */
+	--latest-posts--title-font-size: var(--heading--font-size-h3);
+	--latest-posts--description-font-size: var(--global--font-size-sm);
+
+	/* Spacing */
+	--global--spacing-unit: 20px;
+	--global--spacing-measure: unset;
+	--global--spacing-horizontal: 25px;
+	--global--spacing-vertical: 25px;
+
+	/* Buttons */
+	--button--line-height: 1.15;
+ }
+
+.pods-form-ui-field {
+    margin: 10px 2px;
+}
+
+.objekt-block-group {
+    padding: 1em;
+	border: 1px solid black;
+}
+
+.objekt-block-group:after {
+	content: '';
+	display: block;
+	clear: left;
+}
+
+.objekt-img-block {
+    float: left;
+    min-height: 150px;
+    width: 150px;
+	margin-right: 2em;
+}
+
+.objekt-info-block {
+    float: left;
+}
+
+.pods-pagination-paginate {
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 960px) {
+    .pods-pagination-paginate {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.pods-pagination-paginate  > * {
+    margin: 0 2rem 0 0;
+}
+
+.pods-pagination-paginate .current {
+	text-decoration: underline;
+}
+
+.pods-pagination-paginate a {
+    text-decoration: none;
+}
+
+.pods-pagination-paginate a:hover {
+	text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+.pods-pagination-paginate .dots {
+    transform: translateY(-0.3em);
+}
+
+@media only screen and (min-width: 960px) {
+    .pods-pagination-paginate .next, .pods-pagination-paginate .prev {
+        display: inline;
+    }
+
+    .pods-pagination-paginate .prev {
+        justify-self: flex-start;
+        left: 0;
+        margin-right: auto;
+    }
+
+    .pods-pagination-paginate .next {
+        justify-self: flex-end;
+        margin-left: auto;
+        margin-right: 0;
+        right: 0;
+        text-align: right;
+    }
+}
