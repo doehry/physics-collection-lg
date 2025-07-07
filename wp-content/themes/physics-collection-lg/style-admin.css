@@ -1,0 +1,15 @@
+.post-type-objekt .column-inventory_nr {
+	width: 7em;
+}
+
+.post-type-objekt .column-title {
+    width: 40%;
+}
+
+.post-type-objekt .column-location {
+    width: 7em;
+}
+
+.post-type-objekt .column-categories {
+    width: 30%;
+}

@@ -5,6 +5,7 @@
  * Version:    0.1
  */
 
+ 
  :root {
     /* Font Size */
 	--global--font-size-base: 1rem;
@@ -43,39 +44,61 @@
     margin: 10px 2px;
 }
 
-.objekt-block-group {
+/* Object List */
+
+.object-block-group {
+    background: rgb(240, 240, 240);
     padding: 1em;
-	border: 1px solid black;
 }
 
-.objekt-block-group:after {
+.object-block-group:after {
 	content: '';
 	display: block;
 	clear: left;
 }
 
-.objekt-img-block {
+.object-img-block {
     float: left;
     min-height: 150px;
     width: 150px;
 	margin-right: 2em;
 }
 
-.objekt-info-block {
+.object-info-block {
     float: left;
 }
+
+/* Object Single */
+.object-details {
+    background: rgb(240, 240, 240);
+    padding: 1em; 
+}
+
+.wp-block-details {
+    padding-top: 1em;
+}
+
+
+/* Change the content width to be same as header/nav/footer's width */
+@media only screen and (min-width: 482px) {
+
+	:root {
+		--responsive--aligndefault-width: calc(100vw - 4 * var(--global--spacing-horizontal));
+	}
+}
+
+@media only screen and (min-width: 822px) {
+	:root {
+		--responsive--aligndefault-width: min(calc(100vw - 8 * var(--global--spacing-horizontal)), 1240px);
+	}
+}
+
+/* Pods pagination */
 
 .pods-pagination-paginate {
     align-content: center;
     display: flex;
     flex-wrap: wrap;
-}
-
-@media only screen and (min-width: 960px) {
-    .pods-pagination-paginate {
-        display: flex;
-        flex-direction: row;
-    }
 }
 
 .pods-pagination-paginate  > * {
@@ -99,7 +122,13 @@
     transform: translateY(-0.3em);
 }
 
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 822px) {
+
+    .pods-pagination-paginate {
+        display: flex;
+        flex-direction: row;
+    }
+
     .pods-pagination-paginate .next, .pods-pagination-paginate .prev {
         display: inline;
     }
