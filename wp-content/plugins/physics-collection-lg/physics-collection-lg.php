@@ -35,7 +35,7 @@ function custom_object_column( $column, $post_id ) {
             break;
 
         case 'location' :
-            echo $objects->field('related_location');
+            echo $objects->field('related_location.name');
             break;
     }
 }
