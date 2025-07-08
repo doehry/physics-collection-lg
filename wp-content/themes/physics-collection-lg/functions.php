@@ -16,4 +16,9 @@ function my_admin_theme_style() {
 		get_stylesheet_directory_uri() . '/style-admin.css'
 	);
 }
+
+function my_date($input_date) {
+    return date( "d.m.Y", strtotime( $input_date ) );  
+}
+
 ?>

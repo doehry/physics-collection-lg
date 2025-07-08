@@ -4,7 +4,6 @@
  * Template:   twentytwentyone
  * Version:    0.1
  */
-
  
  :root {
     /* Font Size */
@@ -37,40 +36,44 @@
 	--global--spacing-vertical: 25px;
 
 	/* Buttons */
-	--button--line-height: 1.15;
+	--button--line-height: 1.07;
  }
 
-.pods-form-ui-field {
-    margin: 10px 2px;
-}
-
 /* Object List */
-
 .object-block-group {
-    background: rgb(240, 240, 240);
+    background: var(--global--color-light-gray);
     padding: 1em;
 }
 
-.object-block-group:after {
-	content: '';
-	display: block;
-	clear: left;
-}
-
 .object-img-block {
-    float: left;
-    min-height: 150px;
-    width: 150px;
-	margin-right: 2em;
+    margin-top: 1em;
 }
 
-.object-info-block {
-    float: left;
+@media only screen and (min-width: 822px) {
+
+    .object-block-group:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    .object-img-block {
+        display: block;
+        margin-left: auto;
+        margin-top: 0em;
+        min-height: 150px;
+        width: 150px;
+    }
+
+    .object-info-block {
+        float: left;
+        width: calc(100% - 170px);
+    }
 }
 
 /* Object Single */
 .object-details {
-    background: rgb(240, 240, 240);
+    background: var(--global--color-light-gray);
     padding: 1em; 
 }
 
@@ -78,10 +81,8 @@
     padding-top: 1em;
 }
 
-
 /* Change the content width to be same as header/nav/footer's width */
 @media only screen and (min-width: 482px) {
-
 	:root {
 		--responsive--aligndefault-width: calc(100vw - 4 * var(--global--spacing-horizontal));
 	}
@@ -94,7 +95,6 @@
 }
 
 /* Pods pagination */
-
 .pods-pagination-paginate {
     align-content: center;
     display: flex;
@@ -146,4 +146,18 @@
         right: 0;
         text-align: right;
     }
+}
+
+/* Forms */
+input[type='text'] {
+    margin: 0;
+}
+
+.filter_form select, .filter_form input {
+    margin: 0 0.5em 0.5em 0;
+}
+
+.order_by_form select {
+    border: none;
+    line-height: normal;
 }
