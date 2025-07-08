@@ -28,6 +28,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$field['type'] = 'pick';
 
 			echo PodsForm::field( $pod->filter_var . '_' . $name, $filter, $field['type'], $field, $pod->pod, $pod->id() );
+		} else if ( in_array( $field['type'], array( 'text', 'number' ), true ) ) {
+			$value = sanitize_text_field( pods_v( $pod->filter_var . '_' . $name, 'get', '' ) );
+			$field['required'] = 0;
+			$field['read_only'] = 0;
+			echo PodsForm::row( $pod->filter_var . '_' . $name, $value, 'text', $field, $pod->pod, $pod->id());
 		}
 	}
 	?>
