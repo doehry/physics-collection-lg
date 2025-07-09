@@ -77,10 +77,6 @@
     padding: 1em; 
 }
 
-.wp-block-details {
-    padding-top: 1em;
-}
-
 /* Change the content width to be same as header/nav/footer's width */
 @media only screen and (min-width: 482px) {
 	:root {

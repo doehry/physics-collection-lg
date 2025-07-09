@@ -11,6 +11,7 @@
 
 get_header();
 ?>
+
 <header class="page-header alignwide">
 	<h1 class="page-title">Objekte</h1>
 </header><!-- .page-header -->
@@ -28,6 +29,11 @@ $filter_man = sanitize_text_field( pods_v('filter_man') );
 $filter_search = sanitize_text_field( pods_v('filter_s') );
 $order_by = sanitize_text_field( pods_v('order_by') );
 
+
+$taxonomy = reset($manufacturers)->taxonomy;
+print_r(get_taxonomy($taxonomy));
+$out = get_taxonomy($taxonomy);
+echo $out->label;
 ?>
 <form class="filter_form">
 	<select name="filter_cat" id="filter_cat" onchange="this.form.submit()">
@@ -63,7 +69,7 @@ $order_by = sanitize_text_field( pods_v('order_by') );
 </form>
 <?php
 
-$params['limit'] = 10;
+$params['limit'] = get_option( 'posts_per_page' );
 $params['orderby'] = ( empty( $order_by ) ? 'post_title' : $order_by ) . ' ASC';
 
 if ( !empty( $filter_cat ) ) {
