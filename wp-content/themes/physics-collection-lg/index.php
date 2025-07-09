@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying object archive pages
+ * The template for displaying and filtering posts
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -11,37 +11,34 @@
 
 get_header();
 ?>
-
 <header class="page-header alignwide">
-	<h1 class="page-title">Objekte</h1>
+	<h1 class="page-title">Beiträge</h1>
 </header><!-- .page-header -->
 <div class="entry-content">
 <?php
-$pods = pods( 'object' );
+$pods = pods( 'post' );
 
 $categories = get_taxonomy( 'category' );
-$locations = get_taxonomy( 'location' );
-$manufacturers = get_taxonomy( 'manufacturer' );
+$tags = get_taxonomy( 'post_tag' );
 
 $filter_cat = sanitize_text_field( pods_v('filter_cat') );
-$filter_loc = sanitize_text_field( pods_v('filter_loc') );
-$filter_man = sanitize_text_field( pods_v('filter_man') );
+$filter_tag = sanitize_text_field( pods_v('filter_tag') );
 $filter_search = sanitize_text_field( pods_v('filter_s') );
 $order_by = sanitize_text_field( pods_v('order_by') );
+
 ?>
 <form class="filter_form">
 	<?php echo get_select_form( 'filter_cat', $categories, $filter_cat );  ?>
-	<?php echo get_select_form( 'filter_loc', $locations, $filter_loc ); ?>
-	<?php echo get_select_form( 'filter_man', $manufacturers, $filter_man ); ?>
-	<input type="text" value="<?php echo $filter_search; ?>" name="filter_s" id="filter_s" placeholder="Bezeichnung / Nummer">
+	<?php echo get_select_form( 'filter_tag', $tags, $filter_tag );  ?>
+	<input type="text" value="<?php echo $filter_search; ?>" name="filter_s" id="filter_s" placeholder="Suchen">
 	<input type="submit" value="Filtern">
 </form>
 
 <?php
-$options_order_by = [];
-$options_order_by[] = [ "value" => "post_title", "option" => "Bezeichung" ];
-$options_order_by[] = [ "value" => "inventory_number", "option" => "Inventarnummer" ];
-$options_order_by[] = [ "value" => "related_location", "option" => "Lagerort" ];
+$options_order_by[ 'title' ] = [ "value" => "title", "option" => "Bezeichnung", "sql" => "post_title ASC" ];
+$options_order_by[ 'newest' ] = [ "value" => "newest", "option" => "neueste zuerst", "sql" => "post_date DESC" ];
+$options_order_by[ 'oldest' ] = [ "value" => "oldest", "option" => "älteste zuerst", "sql" => "post_date ASC" ];
+$options_order_by[ 'category' ] = [ "value" => "category", "option" => "Kategorie", "sql" => "category ASC" ];
 ?>
 
 <form class="order_by_form">
@@ -52,20 +49,14 @@ $options_order_by[] = [ "value" => "related_location", "option" => "Lagerort" ];
 <?php
 
 $params['limit'] = get_option( 'posts_per_page' );
-$params['orderby'] = ( empty( $order_by ) ? 'post_title' : $order_by ) . ' ASC';
+$params['orderby'] = ( empty( $order_by ) ? 'post_title ASC' : $options_order_by[ $order_by][ 'sql' ] );
 
 if ( !empty( $filter_cat ) ) {
 	$params['where'] = "category.slug = '" . $filter_cat . "'";
 }
-if ( !empty( $filter_loc ) ) {
-	$params['where'] = "location.slug = '" . $filter_loc . "'";
-}
-if ( !empty( $filter_man ) ) {
-	$params['where'] = "manufacturer.slug = '" . $filter_man . "'";
-}
 if (!empty( $filter_search ) ) {
 	$params['where'] = "post_title LIKE '%" . $filter_search ."%' "
-		. "OR inventory_number.meta_value LIKE '%" . $filter_search ."%' "
+		. "OR post_content LIKE '%" . $filter_search ."%' "
 		. "OR manufacturer_number.meta_value LIKE '%" . $filter_search . "%'";
 }
 
@@ -73,7 +64,7 @@ $pods->find( $params );
 
 if ( $pods->total() > 0 ) :
 	while ( $pods->fetch() ) :
-		echo $pods->template( 'Object Archive List Template' );
+		echo $pods->template( 'Post List Template' );
 	endwhile;
 
 	echo $pods->pagination( array( 'type' => 'paginate' ) );
