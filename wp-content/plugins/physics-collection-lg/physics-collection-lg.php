@@ -29,11 +29,9 @@ add_filter( 'manage_object_posts_columns', 'set_custom_edit_object_columns' );
 function custom_object_column( $column, $post_id ) {
     $objects = pods( 'object', $post_id );
     switch ( $column ) {
-
         case 'inventory_number' :
             echo $objects->field('inventory_number');
             break;
-
         case 'location' :
             echo $objects->field('related_location.name');
             break;
@@ -43,17 +41,21 @@ add_action( 'manage_object_posts_custom_column' , 'custom_object_column', 10, 2 
 
 // Make it sortable
 function object_sortable_columns( $columns ) {
-	$columns['inventory_number'] = 'inventory_number';
+	$columns[ 'inventory_number' ] = 'inventory_number';
+    $columns[ 'location' ] = 'location';
 	return $columns;
 }
 add_filter( 'manage_edit-object_sortable_columns', 'object_sortable_columns' );
 
 function object_slice_orderby( $query ) {
-    $orderby = $query->get('orderby');
- 
-    if ( 'inventory_number' == $orderby ) {
-        $query->set('meta_key','inventory_number');
-        $query->set('orderby','meta_value_num');
+    $orderby = $query->get( 'orderby' );
+    switch ( $orderby ) {
+        case 'inventory_number' :
+            $query->set( 'meta_key','inventory_number' );
+            $query->set( 'orderby','meta_value_num' );
+        case 'location' :
+            $query->set( 'meta_key','related_location' );
+            $query->set( 'orderby','meta_value' );
     }
 }
 add_action( 'pre_get_posts', 'object_slice_orderby' );
