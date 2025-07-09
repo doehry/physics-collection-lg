@@ -37,6 +37,9 @@
 
 	/* Buttons */
 	--button--line-height: 1.07;
+
+    /* Colors */
+    --global--color-background: var(--global--color-white);
  }
 
 /* Object List */

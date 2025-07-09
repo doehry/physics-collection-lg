@@ -38,10 +38,10 @@ $order_by = sanitize_text_field( pods_v('order_by') );
 </form>
 
 <?php
-$options_order_by = [];
-$options_order_by[] = [ "value" => "post_title", "option" => "Bezeichung" ];
-$options_order_by[] = [ "value" => "inventory_number", "option" => "Inventarnummer" ];
-$options_order_by[] = [ "value" => "related_location", "option" => "Lagerort" ];
+$options_order_by[ 'title' ] = [ "value" => "title", "option" => "Bezeichnung", "sql" => "post_title ASC" ];
+$options_order_by[ 'newest' ] = [ "value" => "newest", "option" => "neueste zuerst", "sql" => "inventory_number DESC" ];
+$options_order_by[ 'oldest' ] = [ "value" => "oldest", "option" => "älteste zuerst", "sql" => "inventory_number ASC" ];
+$options_order_by[ 'location' ] = [ "value" => "location", "option" => "Lagerort", "sql" => "location ASC" ];
 ?>
 
 <form class="order_by_form">
@@ -52,7 +52,7 @@ $options_order_by[] = [ "value" => "related_location", "option" => "Lagerort" ];
 <?php
 
 $params['limit'] = get_option( 'posts_per_page' );
-$params['orderby'] = ( empty( $order_by ) ? 'post_title' : $order_by ) . ' ASC';
+$params['orderby'] = ( empty( $order_by ) ? 'post_title ASC' : $options_order_by[ $order_by][ 'sql' ] );
 
 if ( !empty( $filter_cat ) ) {
 	$params['where'] = "category.slug = '" . $filter_cat . "'";
@@ -78,7 +78,7 @@ if ( $pods->total() > 0 ) :
 
 	echo $pods->pagination( array( 'type' => 'paginate' ) );
 else :
-	echo "<p>keine Objekte gefunden</p>";
+	echo "<p>Es wurden keine Objekte gefunden.</p>";
 endif;
 ?>
 </div><!-- .entry-content -->

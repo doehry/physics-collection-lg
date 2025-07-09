@@ -69,7 +69,7 @@ if ( $pods->total() > 0 ) :
 
 	echo $pods->pagination( array( 'type' => 'paginate' ) );
 else :
-	echo "<p>keine Objekte gefunden</p>";
+	echo "<p>Es wurden keine Beiträge gefunden.</p>";
 endif;
 ?>
 </div><!-- .entry-content -->
