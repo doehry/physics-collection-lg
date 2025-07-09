@@ -1,0 +1,29 @@
+
+ :root {
+    /* Font Size */
+	--global--font-size-base: 1rem;
+	--global--font-size-xs: 0.9rem;
+	--global--font-size-sm: 0.95rem;
+	--global--font-size-md: 1rem;
+	--global--font-size-lg: 1.5rem;
+	--global--font-size-xl: 2rem;
+	--global--font-size-xxl: 2.6rem;
+	--global--font-size-xxxl: 4rem;
+	--global--font-size-page-title: var(--global--font-size-xxl);
+
+    /* Headings */
+	--heading--font-size-h6: var(--global--font-size-xs);
+	--heading--font-size-h5: var(--global--font-size-sm);
+	--heading--font-size-h4: var(--global--font-size-lg);
+	--heading--font-size-h3: calc(1.25 * var(--global--font-size-lg));
+	--heading--font-size-h2: var(--global--font-size-xl);
+	--heading--font-size-h1: var(--global--font-size-page-title);
+
+	/* Spacing */
+	--global--spacing-unit: 20px;
+	--global--spacing-measure: unset;
+	--global--spacing-horizontal: 25px;
+	--global--spacing-vertical: 25px;
+
+    
+ }
