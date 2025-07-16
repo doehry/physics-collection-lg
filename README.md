@@ -27,5 +27,4 @@ Space on a web server, supporting
 2. Create a database for WordPress on your web server, as well as a MySQL (or MariaDB) user who has all privileges for accessing and modifying it.
 3. Rename wp-config-sample.php to wp-config.php, then edit the file and add your database information.
 4. Run the WordPress installation script by accessing the URL in a web browser.
-5. Log into the WordPress backend, go to Pods Admin > Import/Export Packages and import the file wp-content/themes/physics-collection-lg/pods.json.
-6. Change the theme to physics-collection-lg.
+5. Change the theme to physics-collection-lg.
