@@ -1,0 +1,245 @@
+<?php
+/**
+ * Plugin Name: Physics Collection LG
+ * Description: A WordPress Plugin for the Physics Collection at Liechtensteinisches Gymnasium
+ * Version: 0.9
+ * Requires at least: 6.8
+ * Requires Plugins: pods
+ */
+namespace oda\physicscollectionlg;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+/**
+ * Register the Pods configuration file.
+ */
+function register_my_pods_config_file() {
+    // Register custom pods.json file.
+    // pods_register_config_file( __DIR__ . '/pods.json' );
+}
+
+add_action( 'init', 'oda\physicscollectionlg\register_my_pods_config_file' );
+
+/**
+ * Plugin activation function
+ */
+function activate_plugin() {
+    $teacher_caps = [
+        'read' => true,
+        'publish_posts' => true,
+        'edit_posts' => true,
+        'edit_published_posts' => true,
+        'delete_posts' => true,
+        'delete_published_posts' => true,
+        'upload_files' => true,
+    ];
+
+    $admin_caps = [
+        'read_private_objects' => true,
+        'publish_objects' => true,
+        'edit_objects' => true,
+        'edit_others_objects' => true,
+        'edit_published_objects' => true,
+        'edit_private_objects' => true,
+        'delete_objects' => true,
+        'delete_others_objects' => true,
+        'delete_published_objects' => true,
+        'delete_private_objects' => true,
+    ];
+
+    $assistant_caps = $teacher_caps + $admin_caps + [
+        'read_private_posts' => true,
+        'edit_others_posts' => true,
+        'edit_private_posts' => true,
+        'delete_others_posts' => true,
+        'delete_private_posts' => true,
+        'manage_categories' => true,
+        'edit_files' => true,
+    ];
+
+    $leader_caps = $assistant_caps + [
+        'list_users' => true,
+        'create_users' => true,
+        'edit_users' => true,
+        'promote_users' => true,
+    ];
+
+    if ( get_role( 'teacher' ) === null ) {
+        add_role( 'teacher', 'Teacher', $teacher_caps );
+    }
+    if ( get_role( 'assistant' ) === null ) {
+        add_role( 'assistant', 'Assistant', $assistant_caps );
+    }
+    if ( get_role( 'leader' ) === null ) {
+        add_role( 'leader', 'Leader', $leader_caps );
+    }
+
+    $admin = get_role( 'administrator' );
+    foreach ( $admin_caps as $cap => $grant ) {
+        $admin->add_cap( $cap, $grant );
+    }
+
+    update_option( 'default_role', 'teacher' );
+}
+
+register_activation_hook( __FILE__, 'oda\physicscollectionlg\activate_plugin' );
+
+/**
+ * Plugin deactivation function
+ */
+function deactivate_plugin() {
+    update_option( 'default_role', 'subscriber' );
+    if ( get_role( 'teacher' ) ) {
+        remove_role( 'teacher' );
+    }
+    if ( get_role( 'assistant' ) ) {
+        remove_role( 'assistant' );
+    }
+    if ( get_role( 'leader' ) ) {
+        remove_role( 'leader' );
+    }
+
+    $admin_caps = [
+        'read_private_objects' => true,
+        'publish_objects' => true,
+        'edit_objects' => true,
+        'edit_others_objects' => true,
+        'edit_published_objects' => true,
+        'edit_private_objects' => true,
+        'delete_objects' => true,
+        'delete_others_objects' => true,
+        'delete_published_objects' => true,
+        'delete_private_objects' => true,
+    ];
+
+    $admin = get_role( 'administrator' );
+    foreach ( $admin_caps as $cap => $grant ) {
+        $admin->remove_cap( $cap, $grant );
+    }
+
+}
+
+register_deactivation_hook( __FILE__, 'oda\physicscollectionlg\deactivate_plugin' );
+
+/**
+ * Add auto increment inventory number
+ */
+function get_next_inventory_number() {
+    $post_type = pods_v( 'post_type' );
+    if ( isset( $post_type ) && $post_type == 'object' ) {
+        $current_inventory_base = date('y')*1000;
+        $pod = pods( 'object' );
+        $params = [
+            'select' => 'MAX(cast(inventory_number.meta_value as unsigned)) as max_inventory_number',
+            'where' => 'inventory_number.meta_value > ' . $current_inventory_base,
+            'limit' => '1',
+        ];
+        $pod->find( $params )->fetch();
+        $inventory_number = $pod->field( 'max_inventory_number' );
+        $_POST[ 'inventory_number' ] = empty( $inventory_number ) ? $current_inventory_base + 1 : $inventory_number + 1 ;
+    }
+}
+
+add_action( 'wp_insert_post', 'oda\physicscollectionlg\get_next_inventory_number' );
+
+/**
+ * Add custom columns to the object post type
+ */
+function set_custom_edit_object_columns( $columns ) {
+    $pod = pods( 'object' );
+    unset( $columns['date'] );
+    $reordered = array();
+    foreach ( $columns as $key => $value ) {
+        if ($key == 'title') {
+            $reordered[ $key ] = $value;
+            $reordered['inventory_number'] = $pod->fields( 'inventory_number', 'label' );
+            $reordered['location'] = $pod->fields( 'related_location', 'label' );
+        } else {
+            $reordered[ $key ] = $value;
+        }
+    }
+    return $reordered;
+}
+
+add_filter( 'manage_object_posts_columns', 'oda\physicscollectionlg\set_custom_edit_object_columns' );
+
+/**
+ * Add data to the custom columns for the objekt post type:
+ */
+function custom_object_column( $column, $post_id ) {
+    $objects = pods( 'object', $post_id );
+    switch ( $column ) {
+        case 'inventory_number' :
+            echo $objects->field( 'inventory_number' );
+            break;
+        case 'location' :
+            echo $objects->field( 'related_location.name' );
+            break;
+    }
+}
+
+add_action( 'manage_object_posts_custom_column' , 'oda\physicscollectionlg\custom_object_column', 10, 2 );
+
+/**
+ * Make custom columns sortable
+ */
+function object_sortable_columns( $columns ) {
+	$columns[ 'inventory_number' ] = 'inventory_number';
+    $columns[ 'location' ] = 'location';
+	return $columns;
+}
+
+add_filter( 'manage_edit-object_sortable_columns', 'oda\physicscollectionlg\object_sortable_columns' );
+
+function object_slice_orderby( $query ) {
+    $orderby = $query->get( 'orderby' );
+    switch ( $orderby ) {
+        case 'inventory_number' :
+            $query->set( 'meta_key','inventory_number' );
+            $query->set( 'orderby','meta_value_num' );
+        case 'location' :
+            $query->set( 'meta_key','related_location' );
+            $query->set( 'orderby','meta_value' );
+    }
+}
+
+add_action( 'pre_get_posts', 'oda\physicscollectionlg\object_slice_orderby' );
+
+/**
+ * Do not allow changes to admins if the current user is not an admin
+ */
+function my_map_meta_cap( $caps, $cap, $user_id, $args ) {
+  $check_caps = [
+    'edit_user',
+    'remove_user',
+    'promote_user',
+    'delete_user',
+    'delete_users'
+  ];
+  if( !in_array( $cap, $check_caps ) || current_user_can( 'administrator' ) ) {
+    return $caps;
+  }
+  $other = get_user_by( 'id', $args[0] ?? false );
+  if( $other && $other->has_cap( 'administrator' ) ) {
+    $caps[] = 'do_not_allow';
+  }
+  return $caps;
+}
+
+add_filter('map_meta_cap', 'oda\physicscollectionlg\my_map_meta_cap', 10, 4 );
+
+/**
+ * Remove 'Administrator' from the list of roles if the current user is not an admin
+ */
+function editable_roles( $roles ){
+    if( isset( $roles['administrator'] ) && !current_user_can( 'administrator' ) ){
+        unset( $roles['administrator'] );
+    }
+    return $roles;
+}
+
+add_filter('editable_roles', 'oda\physicscollectionlg\editable_roles');
+
+?>
