@@ -73,7 +73,7 @@ $pods->find( $params );
 
 if ( $pods->total() > 0 ) :
 	while ( $pods->fetch() ) :
-		echo $pods->template( 'Object Archive List Template' );
+		echo $pods->template( 'Object List Template' );
 	endwhile;
 
 	echo $pods->pagination( array( 'type' => 'paginate' ) );

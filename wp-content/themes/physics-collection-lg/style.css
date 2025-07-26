@@ -42,25 +42,29 @@
     --global--color-background: var(--global--color-white);
  }
 
-/* Object List */
+/* Object/Post List */
 .object-block-group {
+    background: rgb(235, 235, 250);
+    padding: 1em;
+}
+.post-block-group {
     background: var(--global--color-light-gray);
     padding: 1em;
 }
 
-.object-img-block {
+.object-img-block, .post-img-block {
     margin-top: 1em;
 }
 
 @media only screen and (min-width: 822px) {
 
-    .object-block-group:after {
+    .object-block-group:after, .post-block-group:after {
         content: '';
         display: block;
         clear: both;
     }
 
-    .object-img-block {
+    .object-img-block, .post-img-block {
         display: block;
         margin-left: auto;
         margin-top: 0em;
@@ -68,7 +72,7 @@
         width: 150px;
     }
 
-    .object-info-block {
+    .object-info-block, .post-info-block {
         float: left;
         width: calc(100% - 170px);
     }

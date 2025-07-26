@@ -8,9 +8,7 @@
  */
 namespace oda\physicscollectionlg;
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit();
 
 /**
  * Register the Pods configuration file.
