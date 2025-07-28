@@ -2,24 +2,14 @@
 /** 
  * load style.css
  */
-function theme_enqueue_style() {
-	wp_enqueue_style( 
-		'physics-collection-lg-style', 
-		get_stylesheet_uri()
-	);
-}
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_style', 20 );
-
-/**
- * load style-admin.css
- */
-function my_admin_theme_style() {
-    wp_enqueue_style(
-		'my-admin-style', 
-		get_stylesheet_directory_uri() . '/style-admin.css'
-	);
-}
-add_action('admin_enqueue_scripts', 'my_admin_theme_style');
+add_action( 'wp_enqueue_scripts', 
+	function () {
+		wp_enqueue_style( 
+			'physics-collection-lg-style', 
+			get_stylesheet_uri()
+		);
+	}, 20 
+);
 
 /** 
  * date format function for use in pods magic tags

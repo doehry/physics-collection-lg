@@ -13,12 +13,11 @@ defined( 'ABSPATH' ) || exit();
 /**
  * Register the Pods configuration file.
  */
-function register_my_pods_config_file() {
-    // Register custom pods.json file.
-    // pods_register_config_file( __DIR__ . '/pods.json' );
-}
-
-add_action( 'init', 'oda\physicscollectionlg\register_my_pods_config_file' );
+add_action( 'init', 
+    function () { 
+        //pods_register_config_file( __DIR__ . '/pods.json' ); 
+    } 
+);
 
 /**
  * Plugin activation function
@@ -117,7 +116,6 @@ function deactivate_plugin() {
     foreach ( $admin_caps as $cap => $grant ) {
         $admin->remove_cap( $cap, $grant );
     }
-
 }
 
 register_deactivation_hook( __FILE__, 'oda\physicscollectionlg\deactivate_plugin' );
@@ -125,25 +123,24 @@ register_deactivation_hook( __FILE__, 'oda\physicscollectionlg\deactivate_plugin
 /**
  * Add auto increment inventory number
  */
-function insert_inventory_number( $post_ID, $post, $update ) {
+function insert_inventory_number( $post_id, $post, $update ) {
 
-    if ( $post->post_type == 'object' && !$update ) {
-        $current_inventory_base = date('y')*1000;
+    if ( !$update ) {
+        $current_inventory_base = date( 'y' )*1000;
         $pod = pods( 'object' );
         $params = [
-            'select' => 'MAX(cast(inventory_number.meta_value as unsigned)) as max_inventory_number',
+            'select' => 'MAX(CAST(inventory_number.meta_value AS UNSIGNED)) AS max_inventory_number',
             'where' => 'inventory_number.meta_value > ' . $current_inventory_base,
             'limit' => '1',
         ];
         $pod->find( $params )->fetch();
         $max_inventory_number = $pod->field( 'max_inventory_number' );
         $inventory_number = empty( $max_inventory_number ) ? $current_inventory_base + 1 : $max_inventory_number + 1 ;
-        add_post_meta( $post_ID, 'inventory_number', $inventory_number );
+        add_post_meta( $post_id, 'inventory_number', $inventory_number );
     }
 }
 
-add_action( 'wp_insert_post', 'oda\physicscollectionlg\insert_inventory_number', 10, 3 );
-
+add_action( 'save_post_object', 'oda\physicscollectionlg\insert_inventory_number', 10, 3 );
 
 /**
  * Add custom columns to the object post type
@@ -151,7 +148,7 @@ add_action( 'wp_insert_post', 'oda\physicscollectionlg\insert_inventory_number',
 function set_custom_edit_object_columns( $columns ) {
     $pod = pods( 'object' );
     unset( $columns['date'] );
-    $reordered = array();
+    $reordered = [];
     foreach ( $columns as $key => $value ) {
         if ($key == 'title') {
             $reordered[ $key ] = $value;
@@ -207,6 +204,18 @@ function object_slice_orderby( $query ) {
 }
 
 add_action( 'pre_get_posts', 'oda\physicscollectionlg\object_slice_orderby' );
+
+/**
+ * load style-admin.css
+ */
+add_action('admin_enqueue_scripts',
+    function () {
+        wp_enqueue_style(
+            'my-admin-style', 
+            plugin_dir_url( __FILE__ ) . '/css/style-admin.css'
+        );
+    }
+);
 
 /**
  * Do not allow changes to admins if the current user is not an admin
