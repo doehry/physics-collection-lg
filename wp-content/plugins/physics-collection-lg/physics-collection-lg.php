@@ -196,10 +196,12 @@ function object_slice_orderby( $query ) {
     switch ( $orderby ) {
         case 'inventory_number' :
             $query->set( 'meta_key','inventory_number' );
-            $query->set( 'orderby','meta_value_num' );
+            $query->set( 'orderby','meta_value' );
+            break;
         case 'location' :
             $query->set( 'meta_key','related_location' );
             $query->set( 'orderby','meta_value' );
+            break;
     }
 }
 
