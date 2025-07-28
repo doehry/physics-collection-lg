@@ -60,7 +60,6 @@ function activate_plugin() {
         'list_users' => true,
         'create_users' => true,
         'edit_users' => true,
-        'delete_users' => true,
         'promote_users' => true,
     ];
 
