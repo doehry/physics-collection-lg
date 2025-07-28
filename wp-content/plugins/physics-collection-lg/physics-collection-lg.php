@@ -61,6 +61,7 @@ function activate_plugin() {
         'list_users' => true,
         'create_users' => true,
         'edit_users' => true,
+        'delete_users' => true,
         'promote_users' => true,
     ];
 
@@ -124,9 +125,9 @@ register_deactivation_hook( __FILE__, 'oda\physicscollectionlg\deactivate_plugin
 /**
  * Add auto increment inventory number
  */
-function get_next_inventory_number() {
-    $post_type = pods_v( 'post_type' );
-    if ( isset( $post_type ) && $post_type == 'object' ) {
+function insert_inventory_number( $post_ID, $post, $update ) {
+
+    if ( $post->post_type == 'object' && !$update ) {
         $current_inventory_base = date('y')*1000;
         $pod = pods( 'object' );
         $params = [
@@ -135,12 +136,14 @@ function get_next_inventory_number() {
             'limit' => '1',
         ];
         $pod->find( $params )->fetch();
-        $inventory_number = $pod->field( 'max_inventory_number' );
-        $_POST[ 'inventory_number' ] = empty( $inventory_number ) ? $current_inventory_base + 1 : $inventory_number + 1 ;
+        $max_inventory_number = $pod->field( 'max_inventory_number' );
+        $inventory_number = empty( $max_inventory_number ) ? $current_inventory_base + 1 : $max_inventory_number + 1 ;
+        add_post_meta( $post_ID, 'inventory_number', $inventory_number );
     }
 }
 
-add_action( 'wp_insert_post', 'oda\physicscollectionlg\get_next_inventory_number' );
+add_action( 'wp_insert_post', 'oda\physicscollectionlg\insert_inventory_number', 10, 3 );
+
 
 /**
  * Add custom columns to the object post type
@@ -211,16 +214,15 @@ add_action( 'pre_get_posts', 'oda\physicscollectionlg\object_slice_orderby' );
 function my_map_meta_cap( $caps, $cap, $user_id, $args ) {
   $check_caps = [
     'edit_user',
-    'remove_user',
     'promote_user',
     'delete_user',
-    'delete_users'
   ];
-  if( !in_array( $cap, $check_caps ) || current_user_can( 'administrator' ) ) {
+  if ( !in_array( $cap, $check_caps ) || current_user_can( 'administrator' ) ) {
     return $caps;
   }
   $other = get_user_by( 'id', $args[0] ?? false );
-  if( $other && $other->has_cap( 'administrator' ) ) {
+  if ( $other && $other->has_cap( 'administrator' ) ) {
+    echo $cap ." ";
     $caps[] = 'do_not_allow';
   }
   return $caps;
@@ -232,7 +234,7 @@ add_filter('map_meta_cap', 'oda\physicscollectionlg\my_map_meta_cap', 10, 4 );
  * Remove 'Administrator' from the list of roles if the current user is not an admin
  */
 function editable_roles( $roles ){
-    if( isset( $roles['administrator'] ) && !current_user_can( 'administrator' ) ){
+    if ( isset( $roles['administrator'] ) && !current_user_can( 'administrator' ) ){
         unset( $roles['administrator'] );
     }
     return $roles;
