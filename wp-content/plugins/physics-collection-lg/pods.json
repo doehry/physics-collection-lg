@@ -1,7 +1,7 @@
 {
     "@meta": {
         "version": "3.3.2",
-        "build": 1753559977
+        "build": 1753818666
     },
     "settings": {
         "types_only": "0",
@@ -24,6 +24,7 @@
         "wisdom_opt_out": "1",
         "active_components": [
             "migrate-packages",
+            "roles-and-capabilities",
             "templates",
             "translate-pods-admin"
         ]
@@ -53,6 +54,10 @@
             "label_singular_de_DE": "Lagerort",
             "rest_api_field_mode": "value",
             "rest_api_field_location": "object",
+            "pfat_enable": "0",
+            "pfat_filter_single": "get_the_archive_description",
+            "menu_name_de_DE": "Lagerorte",
+            "label_add_new_item_de_DE": "Lagerort hinzuf\u00fcgen",
             "groups": [
                 {
                     "name": "more_fields",
@@ -88,6 +93,8 @@
             "label_singular_de_DE": "Hersteller",
             "rest_api_field_mode": "value",
             "rest_api_field_location": "object",
+            "menu_name_de_DE": "Hersteller",
+            "label_add_new_item_de_DE": "Hersteller hinzuf\u00fcgen",
             "groups": [
                 {
                     "name": "more_fields",
@@ -154,6 +161,15 @@
             "show_access_restricted_messages": "inherit",
             "show_access_admin_notices": "inherit",
             "capability_type_extra": "1",
+            "menu_name_de_DE": "Objekte",
+            "name_admin_bar_de_DE": "Objekt",
+            "label_add_new_item_de_DE": "Objekt hinzuf\u00fcgen",
+            "label_search_items_de_DE": "Objekte durchsuchen",
+            "label_new_item_de_DE": "Neues Objekt",
+            "label_edit_item_de_DE": "Objekt bearbeiten",
+            "label_view_item_de_DE": "Objekt anzeigen",
+            "label_view_items_de_DE": "Objekte anzeigen",
+            "label_all_items_de_DE": "Alle Objekte",
             "groups": [
                 {
                     "name": "data",
@@ -182,7 +198,7 @@
                             "number_html5": "0",
                             "repeatable": "0",
                             "repeatable_format": "default",
-                            "default_evaluate_tags": "1",
+                            "default_evaluate_tags": "0",
                             "default_empty_fields": "0",
                             "roles_allowed": "administrator",
                             "revisions_revision_field": "0",
@@ -196,7 +212,6 @@
                             "restrict_capability": "0",
                             "hidden": "0",
                             "read_only": "1",
-                            "default_value": "{@post.inventory_number}",
                             "label_de_DE": "Inventarnummer"
                         },
                         {
@@ -762,7 +777,7 @@
             "code": "<div class=\"object-block-group\">\r\n\t<div class=\"object-info-block\">\r\n\t<h4><a href=\"{@guid}\">{@post_title}<\/a><\/h4>\r\n\t<p>\r\n\t\tInventarnummer: {@inventory_number}<br>\r\n\t\tLagerort: {@location}\r\n\t\t[if manufacturer]<br>\r\n\t\tHersteller: {@manufacturer}\r\n\t\t[\/if]\r\n\t\t[if manufacturer_number]\r\n\t\t({@manufacturer_number})\r\n\t\t[\/if]\r\n\t\t[if category]<br>\r\n\t\tKategorie: {@category}\r\n\t\t[\/if]\r\n\t<\/p>\r\n\t<\/div>\r\n\t<div class=\"object-img-block\">\r\n\t\t[if image]\r\n\t\t<img src=\"{@image._src.thumbnail}\">\r\n\t\t[\/if]\r\n\t<\/div>\r\n<\/div>",
             "id": 101,
             "_edit_last": "1",
-            "_edit_lock": "1753558515:1",
+            "_edit_lock": "1753794318:1",
             "admin_only": "0",
             "restrict_capability": "0",
             "show_restrict_message": "0",
@@ -776,10 +791,10 @@
         {
             "name": "Object Template",
             "uri": "",
-            "code": "{@description}\r\n\r\n<div class=\"object-details\">\r\n<p>\r\n\t<strong>Inventarnummer:<\/strong> {@inventory_number}<br>\r\n\t<strong>Lagerort:<\/strong> {@location}<br>\r\n\t<strong>Anzahl:<\/strong> {@quantity}\r\n\t[if manufacturer]<br>\r\n\t<strong>Hersteller:<\/strong> {@manufacturer}\r\n\t[\/if]\r\n\t[if manufacturer_number]\r\n\t({@manufacturer_number})\r\n\t[\/if]\r\n\t[if year_of_purchase]<br>\r\n\t<strong>Anschaffungsjahr:<\/strong> {@year_of_purchase}\r\n\t[\/if]\r\n\t[if purchase_cost]<br>\r\n\t<strong>Anschaffungskosten:<\/strong> {@purchase_cost}\r\n\t[\/if]\r\n<\/p>\r\n<\/div>\r\n\r\n[if attachments]\r\n<h4>Dokumente<\/h4>\r\n<ul>\r\n[each attachments]\r\n    <li><a href=\"{@permalink,esc_url}\">{@post_title}<\/a><\/li>\r\n[\/each]\r\n<\/ul>\r\n[\/if]\r\n\r\n[if related_objects]\r\n<h4>andere Objekte<\/h4>\r\n[each related_objects]\r\n[pods name=\"object\" template=\"Object List Template\" id=\"{@ID}\"]\r\n[\/each]\r\n[\/if]\r\n[if related_posts]\r\n<h4>Beitr\u00e4ge<\/h4>\r\n<ul>\r\n[each related_posts]\r\n    <li><a href=\"{@permalink,esc_url}\">{@post_title}<\/a><\/li>\r\n[\/each]\r\n<\/ul>\r\n[\/if]",
+            "code": "{@description}\r\n<div class=\"object-details\">\r\n\t<p>\r\n\t\t<strong>Inventarnummer:<\/strong> {@inventory_number}<br>\r\n\t\t<strong>Lagerort:<\/strong> {@location}<br>\r\n\t\t<strong>Anzahl:<\/strong> {@quantity}\r\n\t\t[if manufacturer]<br>\r\n\t\t\t<strong>Hersteller:<\/strong> {@manufacturer}\r\n\t\t[\/if]\r\n\t\t[if manufacturer_number]\r\n\t\t\t({@manufacturer_number})\r\n\t\t[\/if]\r\n\t\t[if year_of_purchase]<br>\r\n\t\t\t<strong>Anschaffungsjahr:<\/strong> {@year_of_purchase}\r\n\t\t[\/if]\r\n\t\t[if purchase_cost]<br>\r\n\t\t\t<strong>Anschaffungskosten:<\/strong> {@purchase_cost}\r\n\t\t[\/if]\r\n\t<\/p>\r\n<\/div>\r\n[if attachments]\r\n\t<h4>Dokumente<\/h4>\r\n\t<ul>\r\n\t[each attachments]\r\n\t\t<li><a href=\"{@permalink,esc_url}\">{@post_title}<\/a><\/li>\r\n\t[\/each]\r\n\t<\/ul>\r\n[\/if]\r\n[if related_objects]\r\n\t<h4>andere Objekte<\/h4>\r\n\t[each related_objects]\r\n\t\t[pods name=\"object\" template=\"Object List Template\" id=\"{@ID}\"]\r\n\t[\/each]\r\n[\/if]\r\n[if related_posts]\r\n\t<h4>Beitr\u00e4ge<\/h4>\r\n\t<ul>\r\n\t[each related_posts]\r\n\t\t<li><a href=\"{@permalink,esc_url}\">{@post_title}<\/a><\/li>\r\n\t[\/each]\r\n\t<\/ul>\r\n[\/if]",
             "id": 72,
             "_edit_last": "1",
-            "_edit_lock": "1753559040:1",
+            "_edit_lock": "1753796178:1",
             "admin_only": "0",
             "restrict_capability": "0",
             "show_restrict_message": "0",
@@ -793,10 +808,10 @@
         {
             "name": "Post List Template",
             "uri": "",
-            "code": "<div class=\"post-block-group\">\r\n\t<div class=\"post-info-block\">\r\n\t<h4><a href=\"{@guid}\">{@post_title}<\/a><\/h4>\r\n\t<p>\r\n\t\tAutor: {@post_author.display_name}<br>\r\n\t\tDatum: {@post_date,my_date}<br>\r\n\t\tKategorie: {@category.name}\r\n\t\t[if post_tag]<br>\r\n\t\tSchlagw\u00f6rter: {@post_tag.name}\r\n\t\t[\/if]\r\n\t<\/p>\r\n\t<\/div>\r\n\t<div class=\"post-img-block\">\r\n\t\t[if post_thumbnail]\r\n\t\t<img src=\"{@post_thumbnail_url.thumbnail}\">\r\n\t\t[\/if]\r\n\t<\/div>\r\n<\/div>",
+            "code": "<div class=\"post-block-group\">\r\n\t<div class=\"post-info-block\">\r\n\t\t<h4><a href=\"{@guid}\">{@post_title}<\/a><\/h4>\r\n\t\t<p>\r\n\t\t\tAutor: {@post_author.display_name}<br>\r\n\t\t\tDatum: {@post_date,my_date}<br>\r\n\t\t\tKategorie: {@category.name}\r\n\t\t\t[if post_tag]<br>\r\n\t\t\t\tSchlagw\u00f6rter: {@post_tag.name}\r\n\t\t\t[\/if]\r\n\t\t<\/p>\r\n\t<\/div>\r\n\t<div class=\"post-img-block\">\r\n\t\t[if post_thumbnail]\r\n\t\t\t<img src=\"{@post_thumbnail_url.thumbnail}\">\r\n\t\t[\/if]\r\n\t<\/div>\r\n<\/div>",
             "id": 2805,
             "_edit_last": "1",
-            "_edit_lock": "1753558983:1",
+            "_edit_lock": "1753794063:1",
             "admin_only": "0",
             "restrict_capability": "0",
             "show_restrict_message": "0",
@@ -810,10 +825,10 @@
         {
             "name": "Post Template",
             "uri": "",
-            "code": "[if attachments]\r\n<h4>Anh\u00e4nge<\/h4>\r\n<ul>\r\n[each attachments]\r\n    <li><a href=\"{@permalink,esc_url}\">{@post_title}<\/a><\/li>\r\n[\/each]\r\n<\/ul>\r\n[\/if]\r\n\r\n[if related_objects]\r\n<h4>Objekte<\/h4>\r\n\r\n[each related_objects]\r\n[pods name=\"object\" template=\"Object List Template\" id=\"{@ID}\"]\r\n[\/each]\r\n\r\n[\/if]",
+            "code": "[if attachments]\r\n\t<h4>Anh\u00e4nge<\/h4>\r\n\t<ul>\r\n\t[each attachments]\r\n\t\t<li><a href=\"{@permalink,esc_url}\">{@post_title}<\/a><\/li>\r\n\t[\/each]\r\n\t<\/ul>\r\n[\/if]\r\n[if related_objects]\r\n\t<h4>Objekte<\/h4>\r\n\t[each related_objects]\r\n\t\t[pods name=\"object\" template=\"Object List Template\" id=\"{@ID}\"]\r\n\t[\/each]\r\n[\/if]",
             "id": 2830,
             "_edit_last": "1",
-            "_edit_lock": "1753559409:1",
+            "_edit_lock": "1753793977:1",
             "admin_only": "0",
             "restrict_capability": "0",
             "show_restrict_message": "0",

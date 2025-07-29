@@ -2,8 +2,6 @@
 /**
  * The template for displaying search results pages
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
  * @package WordPress
  * @subpackage physics-collection-lg
  * @since physics-collection-lg 0.9

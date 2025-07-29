@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Physics Collection LG
  * Description: A WordPress Plugin for the Physics Collection at Liechtensteinisches Gymnasium
- * Version: 0.9
+ * Version: 1.0
  * Requires at least: 6.8
  * Requires Plugins: pods
  */
@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit();
  */
 add_action( 'init', 
     function () { 
-        //pods_register_config_file( __DIR__ . '/pods.json' ); 
+        pods_register_config_file( __DIR__ . '/pods.json' ); 
     } 
 );
 
