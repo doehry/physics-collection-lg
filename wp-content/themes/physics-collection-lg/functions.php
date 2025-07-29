@@ -19,7 +19,7 @@ function my_date($input_date) {
 }
 
 /**
- * return select tag from taxonomy or options array
+ * return select from taxonomy or options array
  */
 function get_select_form( $name, $taxonomy_or_options, $selected='', $submit_on_change=true ) {
 	if ( is_a( $taxonomy_or_options, 'WP_Taxonomy' ) ) {
@@ -27,19 +27,19 @@ function get_select_form( $name, $taxonomy_or_options, $selected='', $submit_on_
 		$taxonomy = $taxonomy_or_options->name;
 		$label = $taxonomy_or_options->label;
 		$taxonomy_list = get_terms( [ 'taxonomy' => $taxonomy, 'hide_empty' => false ] );
-		$options[] = [ "value" => "", "option" => "-- " . $label . " --" ];
+		$options[] = [ "option" => "-- " . $label . " --" ];
 
 		foreach ( $taxonomy_list as $taxonomy_item ) {
-			$options[] = [ "value" => $taxonomy_item->slug, "option" => $taxonomy_item->name ];
+			$options[ $taxonomy_item->slug ] = [ "option" => $taxonomy_item->name ];
 		}
 	} else {
 		$options = $taxonomy_or_options;
 	}
 	$form_output = '<select name="' . $name . '" id="' . $name . '" ' 
 		. ( $submit_on_change ? 'onchange="this.form.submit()"' : '') . ' >';
-	foreach ( $options as $option ) {
-		$form_output .= '<option value="' . $option[ 'value' ]  . '" ' 
-			. ( $option[ 'value' ] == $selected  ? 'selected' : '' ) . ' ">';
+	foreach ( $options as $value=>$option ) {
+		$form_output .= '<option value="' . $value  . '" ' 
+			. ( $value == $selected  ? 'selected' : '' ) . ' ">';
 		$form_output .= $option[ 'option' ] . '</option>';
 	}
 	$form_output .= '</select>';
