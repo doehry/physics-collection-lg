@@ -1,7 +1,7 @@
 {
     "@meta": {
         "version": "3.3.2",
-        "build": 1752148520
+        "build": 1753559977
     },
     "settings": {
         "types_only": "0",
@@ -24,7 +24,6 @@
         "wisdom_opt_out": "1",
         "active_components": [
             "migrate-packages",
-            "roles-and-capabilities",
             "templates",
             "translate-pods-admin"
         ]
@@ -40,7 +39,7 @@
             "label_singular": "Location",
             "public": "1",
             "show_ui": "1",
-            "hierarchical": "1",
+            "hierarchical": "0",
             "publicly_queryable": "1",
             "dynamic_features_allow": "inherit",
             "rest_enable": "1",
@@ -52,6 +51,8 @@
             "label_singular_i18n": "Location",
             "label_singular_i18n_default": "Location",
             "label_singular_de_DE": "Lagerort",
+            "rest_api_field_mode": "value",
+            "rest_api_field_location": "object",
             "groups": [
                 {
                     "name": "more_fields",
@@ -85,6 +86,8 @@
             "label_singular_i18n": "Manufacturer",
             "label_singular_i18n_default": "Manufacturer",
             "label_singular_de_DE": "Hersteller",
+            "rest_api_field_mode": "value",
+            "rest_api_field_location": "object",
             "groups": [
                 {
                     "name": "more_fields",
@@ -121,9 +124,9 @@
             "built_in_taxonomies_location": "1",
             "built_in_taxonomies_manufacturer": "1",
             "archive_show_in_taxonomies_category": "1",
-            "supports_quick_edit": "1",
+            "supports_quick_edit": "0",
             "default_status": "publish",
-            "capability_type": "custom",
+            "capability_type": "post",
             "has_archive": "1",
             "pfat_enable": "1",
             "pfat_single": "Object Template",
@@ -131,7 +134,6 @@
             "pfat_filter_single": "the_content",
             "pfat_filter_archive": "the_excerpt",
             "pfat_run_outside_loop": "0",
-            "pfat_archive": "Object List Template",
             "pfat_append_archive": "replace",
             "label_i18n": "Objects",
             "label_i18n_default": "Objects",
@@ -139,6 +141,19 @@
             "label_singular_i18n": "Object",
             "label_singular_i18n_default": "Object",
             "label_singular_de_DE": "Objekt",
+            "built_in_taxonomies_location2": "1",
+            "rest_api_field_mode": "value",
+            "rest_api_field_location": "object",
+            "restrict_dynamic_features": "1",
+            "restricted_dynamic_features": [
+                "form"
+            ],
+            "restricted_dynamic_features_forms": [
+                "edit"
+            ],
+            "show_access_restricted_messages": "inherit",
+            "show_access_admin_notices": "inherit",
+            "capability_type_extra": "1",
             "groups": [
                 {
                     "name": "data",
@@ -149,6 +164,7 @@
                     "roles_allowed": "administrator",
                     "meta_box_context": "normal",
                     "meta_box_priority": "high",
+                    "label_de_DE": "Daten",
                     "fields": [
                         {
                             "name": "inventory_number",
@@ -250,7 +266,8 @@
                             "restrict_capability": "0",
                             "hidden": "0",
                             "read_only": "0",
-                            "default_value": "1"
+                            "default_value": "1",
+                            "label_de_DE": "Anzahl"
                         },
                         {
                             "name": "image",
@@ -264,7 +281,7 @@
                             "file_type": "images",
                             "file_attachment_tab": "upload",
                             "file_attachment_current_post_only": "1",
-                            "file_upload_dir": "uploads",
+                            "file_upload_dir": "wp",
                             "file_edit_title": "1",
                             "file_show_edit_link": "0",
                             "file_linked": "0",
@@ -287,13 +304,13 @@
                             "rest_pick_response": "array",
                             "rest_pick_depth": "1",
                             "required": "0",
-                            "file_upload_dir_custom": "objects\/{@ID}\/",
                             "logged_in_only": "0",
                             "admin_only": "0",
                             "restrict_role": "0",
                             "restrict_capability": "0",
                             "hidden": "0",
-                            "read_only": "0"
+                            "read_only": "0",
+                            "label_de_DE": "Bild"
                         },
                         {
                             "name": "description",
@@ -330,7 +347,8 @@
                             "restrict_role": "0",
                             "restrict_capability": "0",
                             "hidden": "0",
-                            "read_only": "0"
+                            "read_only": "0",
+                            "label_de_DE": "Beschreibung"
                         },
                         {
                             "name": "attachments",
@@ -344,7 +362,7 @@
                             "file_type": "any",
                             "file_attachment_tab": "upload",
                             "file_attachment_current_post_only": "0",
-                            "file_upload_dir": "uploads",
+                            "file_upload_dir": "wp",
                             "file_edit_title": "1",
                             "file_show_edit_link": "0",
                             "file_linked": "1",
@@ -367,7 +385,7 @@
                             "rest_pick_response": "array",
                             "rest_pick_depth": "1",
                             "required": "0",
-                            "file_upload_dir_custom": "objects\/{@ID}\/"
+                            "label_de_DE": "Anh\u00e4nge"
                         }
                     ]
                 },
@@ -380,6 +398,11 @@
                     "roles_allowed": "administrator",
                     "meta_box_context": "normal",
                     "meta_box_priority": "default",
+                    "logged_in": "0",
+                    "admin_only": "0",
+                    "restrict_role": "0",
+                    "restrict_capability": "0",
+                    "label_de_DE": "Zusatzdaten",
                     "fields": [
                         {
                             "name": "related_manufacturer",
@@ -442,7 +465,8 @@
                             "enable_conditional_logic": "0",
                             "rest_pick_response": "array",
                             "rest_pick_depth": "1",
-                            "required": "0"
+                            "required": "0",
+                            "label_de_DE": "Herstellernummer"
                         },
                         {
                             "name": "year_of_purchase",
@@ -452,7 +476,7 @@
                             "weight": 2,
                             "type": "date",
                             "date_type": "format",
-                            "date_format": "mdy",
+                            "date_format": "y",
                             "date_allow_empty": "1",
                             "date_html5": "0",
                             "repeatable": "0",
@@ -464,7 +488,8 @@
                             "enable_conditional_logic": "0",
                             "rest_pick_response": "array",
                             "rest_pick_depth": "1",
-                            "required": "0"
+                            "required": "0",
+                            "label_de_DE": "Kaufjahr"
                         },
                         {
                             "name": "purchase_cost",
@@ -493,7 +518,8 @@
                             "enable_conditional_logic": "0",
                             "rest_pick_response": "array",
                             "rest_pick_depth": "1",
-                            "required": "0"
+                            "required": "0",
+                            "label_de_DE": "Kaufpreis"
                         }
                     ]
                 },
@@ -506,6 +532,11 @@
                     "roles_allowed": "administrator",
                     "meta_box_context": "normal",
                     "meta_box_priority": "low",
+                    "label_de_DE": "Verbindungen",
+                    "logged_in": "0",
+                    "admin_only": "0",
+                    "restrict_role": "0",
+                    "restrict_capability": "0",
                     "fields": [
                         {
                             "name": "related_objects",
@@ -542,7 +573,14 @@
                             "rest_pick_response": "array",
                             "rest_pick_depth": "1",
                             "required": "0",
-                            "sister_id": "24"
+                            "sister_id": "24",
+                            "label_de_DE": "Verbundene Objekte",
+                            "logged_in_only": "0",
+                            "admin_only": "0",
+                            "restrict_role": "0",
+                            "restrict_capability": "0",
+                            "hidden": "0",
+                            "read_only": "0"
                         },
                         {
                             "name": "related_posts",
@@ -579,7 +617,14 @@
                             "rest_pick_response": "array",
                             "rest_pick_depth": "1",
                             "required": "0",
-                            "sister_id": "29"
+                            "sister_id": "29",
+                            "logged_in_only": "0",
+                            "admin_only": "0",
+                            "restrict_role": "0",
+                            "restrict_capability": "0",
+                            "hidden": "0",
+                            "read_only": "0",
+                            "label_de_DE": "Verbundene Beitr\u00e4ge"
                         }
                     ]
                 }
@@ -599,6 +644,21 @@
             "pfat_filter_single": "the_content",
             "pfat_filter_archive": "the_excerpt",
             "pfat_run_outside_loop": "0",
+            "built_in_taxonomies_location": "0",
+            "rest_enable": "1",
+            "rest_api_field_mode": "value",
+            "rest_api_field_location": "object",
+            "dynamic_features_allow": "inherit",
+            "restrict_dynamic_features": "1",
+            "restricted_dynamic_features": [
+                "form"
+            ],
+            "restricted_dynamic_features_forms": [
+                "edit"
+            ],
+            "show_access_restricted_messages": "inherit",
+            "show_access_admin_notices": "inherit",
+            "pfat_append_archive": "replace",
             "groups": [
                 {
                     "name": "relations",
@@ -613,6 +673,7 @@
                     "admin_only": "0",
                     "restrict_role": "0",
                     "restrict_capability": "0",
+                    "label_de_DE": "Verbindungen",
                     "fields": [
                         {
                             "name": "attachments",
@@ -626,7 +687,7 @@
                             "file_type": "any",
                             "file_attachment_tab": "upload",
                             "file_attachment_current_post_only": "0",
-                            "file_upload_dir": "uploads",
+                            "file_upload_dir": "wp",
                             "file_edit_title": "1",
                             "file_show_edit_link": "0",
                             "file_linked": "0",
@@ -649,7 +710,7 @@
                             "rest_pick_response": "array",
                             "rest_pick_depth": "1",
                             "required": "0",
-                            "file_upload_dir_custom": "posts\/{@ID}\/"
+                            "label_de_DE": "Anh\u00e4nge"
                         },
                         {
                             "name": "related_objects",
@@ -686,7 +747,8 @@
                             "enable_conditional_logic": "0",
                             "rest_pick_response": "array",
                             "rest_pick_depth": "1",
-                            "required": "0"
+                            "required": "0",
+                            "label_de_DE": "Verbundene Objekte"
                         }
                     ]
                 }
@@ -695,29 +757,12 @@
     ],
     "templates": [
         {
-            "name": "Object Archive List Template",
-            "uri": "",
-            "code": "<div class=\"object-block-group\">\r\n\t<div class=\"object-info-block\">\r\n\t<h4><a href=\"{@guid}\">{@post_title}<\/a><\/h4>\r\n\t<p>\r\n\t\tInventarnummer: {@inventory_number}<br>\r\n\t\tLagerort: {@location}\r\n\t\t[if manufacturer]<br>\r\n\t\tHersteller: {@manufacturer}\r\n\t\t[\/if]\r\n\t\t[if manufacturer_number]<br>\r\n\t\tHerstellernummer: {@manufacturer_number}\r\n\t\t[\/if]\t\r\n\t<\/p>\r\n\t<\/div>\r\n\t<div class=\"object-img-block\">\r\n\t\t[if image]\r\n\t\t<img src=\"{@image._src.thumbnail}\">\r\n\t\t[\/if]\r\n\t<\/div>\r\n<\/div>",
-            "id": 101,
-            "_edit_last": "1",
-            "_edit_lock": "1752001718:1",
-            "admin_only": "0",
-            "restrict_capability": "0",
-            "show_restrict_message": "0",
-            "_pods_capability_allowed": [
-                ""
-            ],
-            "pod_reference": {
-                "pod": ""
-            }
-        },
-        {
             "name": "Object List Template",
             "uri": "",
-            "code": "<div class=\"object-block-group\">\r\n\t<div class=\"object-info-block\">\r\n\t<p>\r\n\t\tInventarnummer: {@inventory_number}<br>\r\n\t\tLagerort: {@location}\r\n\t\t[if manufacturer]<br>\r\n\t\tHersteller: {@manufacturer}\r\n\t\t[\/if]\r\n\t\t[if manufacturer_number]<br>\r\n\t\tHerstellernummer: {@manufacturer_number}\r\n\t\t[\/if]\t\r\n\t<\/p>\r\n\t<\/div>\r\n\t<div class=\"object-img-block\">\r\n\t\t[if image]\r\n\t\t<img src=\"{@image._src.thumbnail}\" alt=\"Objektbild {@post_title}\">\r\n\t\t[\/if]\r\n\t<\/div>\r\n<\/div>",
-            "id": 75,
+            "code": "<div class=\"object-block-group\">\r\n\t<div class=\"object-info-block\">\r\n\t<h4><a href=\"{@guid}\">{@post_title}<\/a><\/h4>\r\n\t<p>\r\n\t\tInventarnummer: {@inventory_number}<br>\r\n\t\tLagerort: {@location}\r\n\t\t[if manufacturer]<br>\r\n\t\tHersteller: {@manufacturer}\r\n\t\t[\/if]\r\n\t\t[if manufacturer_number]\r\n\t\t({@manufacturer_number})\r\n\t\t[\/if]\r\n\t\t[if category]<br>\r\n\t\tKategorie: {@category}\r\n\t\t[\/if]\r\n\t<\/p>\r\n\t<\/div>\r\n\t<div class=\"object-img-block\">\r\n\t\t[if image]\r\n\t\t<img src=\"{@image._src.thumbnail}\">\r\n\t\t[\/if]\r\n\t<\/div>\r\n<\/div>",
+            "id": 101,
             "_edit_last": "1",
-            "_edit_lock": "1752001993:1",
+            "_edit_lock": "1753558515:1",
             "admin_only": "0",
             "restrict_capability": "0",
             "show_restrict_message": "0",
@@ -725,16 +770,16 @@
                 ""
             ],
             "pod_reference": {
-                "pod": ""
+                "pod": "object"
             }
         },
         {
             "name": "Object Template",
             "uri": "",
-            "code": "{@description}\r\n\r\n<div class=\"object-details\">\r\n<p>\r\n\t<strong>Inventarnummer:<\/strong> {@inventory_number}<br>\r\n\t<strong>Lagerort:<\/strong> {@location}<br>\r\n\t<strong>Anzahl:<\/strong> {@quantity}\r\n\t[if manufacturer]<br>\r\n\t<strong>Hersteller:<\/strong> {@manufacturer}\r\n\t[\/if]\r\n\t[if manufacturer_number]<br>\r\n\t<strong>Hersteller Nummer:<\/strong> {@manufacturer_number}\r\n\t[\/if]\r\n\t[if year_of_purchase]<br>\r\n\t<strong>Anschaffungsjahr:<\/strong> {@year_of_purchase}\r\n\t[\/if]\r\n\t[if purchase_cost]<br>\r\n\t<strong>Anschaffungskosten:<\/strong> {@purchase_cost}\r\n\t[\/if]\r\n<\/p>\r\n<\/div>\r\n\r\n[if attachments]\r\n<h4>Dokumente<\/h4>\r\n<ul>\r\n[each attachments]\r\n    <li><a href=\"{@permalink,esc_url}\">{@post_title}<\/a><\/li>\r\n[\/each]\r\n<\/ul>\r\n[\/if]\r\n\r\n[if related_objects]\r\n<h4>andere Objekte<\/h4>\r\n[each related_objects]\r\n[pods name=\"object\" template=\"Object Archive List Template\" id=\"{@ID}\"]\r\n[\/each]\r\n[\/if]\r\n[if related_posts]\r\n<h4>Beitr\u00e4ge<\/h4>\r\n<ul>\r\n[each related_posts]\r\n    <li><a href=\"{@permalink,esc_url}\">{@post_title}<\/a><\/li>\r\n[\/each]\r\n<\/ul>\r\n[\/if]",
+            "code": "{@description}\r\n\r\n<div class=\"object-details\">\r\n<p>\r\n\t<strong>Inventarnummer:<\/strong> {@inventory_number}<br>\r\n\t<strong>Lagerort:<\/strong> {@location}<br>\r\n\t<strong>Anzahl:<\/strong> {@quantity}\r\n\t[if manufacturer]<br>\r\n\t<strong>Hersteller:<\/strong> {@manufacturer}\r\n\t[\/if]\r\n\t[if manufacturer_number]\r\n\t({@manufacturer_number})\r\n\t[\/if]\r\n\t[if year_of_purchase]<br>\r\n\t<strong>Anschaffungsjahr:<\/strong> {@year_of_purchase}\r\n\t[\/if]\r\n\t[if purchase_cost]<br>\r\n\t<strong>Anschaffungskosten:<\/strong> {@purchase_cost}\r\n\t[\/if]\r\n<\/p>\r\n<\/div>\r\n\r\n[if attachments]\r\n<h4>Dokumente<\/h4>\r\n<ul>\r\n[each attachments]\r\n    <li><a href=\"{@permalink,esc_url}\">{@post_title}<\/a><\/li>\r\n[\/each]\r\n<\/ul>\r\n[\/if]\r\n\r\n[if related_objects]\r\n<h4>andere Objekte<\/h4>\r\n[each related_objects]\r\n[pods name=\"object\" template=\"Object List Template\" id=\"{@ID}\"]\r\n[\/each]\r\n[\/if]\r\n[if related_posts]\r\n<h4>Beitr\u00e4ge<\/h4>\r\n<ul>\r\n[each related_posts]\r\n    <li><a href=\"{@permalink,esc_url}\">{@post_title}<\/a><\/li>\r\n[\/each]\r\n<\/ul>\r\n[\/if]",
             "id": 72,
             "_edit_last": "1",
-            "_edit_lock": "1752046188:1",
+            "_edit_lock": "1753559040:1",
             "admin_only": "0",
             "restrict_capability": "0",
             "show_restrict_message": "0",
@@ -748,10 +793,10 @@
         {
             "name": "Post List Template",
             "uri": "",
-            "code": "<div class=\"object-block-group\">\r\n\t<div class=\"object-info-block\">\r\n\t<h4><a href=\"{@guid}\">{@post_title}<\/a><\/h4>\r\n\t<p>\r\n\t\tAutor: {@post_author.display_name}<br>\r\n\t\tDatum: {@post_date,my_date}<br>\r\n\t\tKategorie: {@category.name}\r\n\t\t[if post_tag]<br>\r\n\t\tSchlagw\u00f6rter: {@post_tag.name}\r\n\t\t[\/if]\r\n\t<\/p>\r\n\t<\/div>\r\n\t<div class=\"object-img-block\">\r\n\t\t[if post_thumbnail]\r\n\t\t<img src=\"{@post_thumbnail_url.thumbnail}\">\r\n\t\t[\/if]\r\n\t<\/div>\r\n<\/div>",
+            "code": "<div class=\"post-block-group\">\r\n\t<div class=\"post-info-block\">\r\n\t<h4><a href=\"{@guid}\">{@post_title}<\/a><\/h4>\r\n\t<p>\r\n\t\tAutor: {@post_author.display_name}<br>\r\n\t\tDatum: {@post_date,my_date}<br>\r\n\t\tKategorie: {@category.name}\r\n\t\t[if post_tag]<br>\r\n\t\tSchlagw\u00f6rter: {@post_tag.name}\r\n\t\t[\/if]\r\n\t<\/p>\r\n\t<\/div>\r\n\t<div class=\"post-img-block\">\r\n\t\t[if post_thumbnail]\r\n\t\t<img src=\"{@post_thumbnail_url.thumbnail}\">\r\n\t\t[\/if]\r\n\t<\/div>\r\n<\/div>",
             "id": 2805,
             "_edit_last": "1",
-            "_edit_lock": "1752046260:1",
+            "_edit_lock": "1753558983:1",
             "admin_only": "0",
             "restrict_capability": "0",
             "show_restrict_message": "0",
@@ -768,16 +813,16 @@
             "code": "[if attachments]\r\n<h4>Anh\u00e4nge<\/h4>\r\n<ul>\r\n[each attachments]\r\n    <li><a href=\"{@permalink,esc_url}\">{@post_title}<\/a><\/li>\r\n[\/each]\r\n<\/ul>\r\n[\/if]\r\n\r\n[if related_objects]\r\n<h4>Objekte<\/h4>\r\n\r\n[each related_objects]\r\n[pods name=\"object\" template=\"Object List Template\" id=\"{@ID}\"]\r\n[\/each]\r\n\r\n[\/if]",
             "id": 2830,
             "_edit_last": "1",
-            "_edit_lock": "1752057799:1",
-            "pod_reference": {
-                "pod": ""
-            },
+            "_edit_lock": "1753559409:1",
             "admin_only": "0",
             "restrict_capability": "0",
             "show_restrict_message": "0",
             "_pods_capability_allowed": [
                 ""
-            ]
+            ],
+            "pod_reference": {
+                "pod": ""
+            }
         }
     ]
 }
