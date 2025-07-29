@@ -34,10 +34,12 @@ $order_by = sanitize_text_field( pods_v('order_by') );
 </form>
 
 <?php
-$options_order_by[ 'title' ] = [ "option" => "Bezeichnung", "sql" => "post_title ASC" ];
-$options_order_by[ 'newest' ] = [ "option" => "neueste zuerst", "sql" => "post_date DESC" ];
-$options_order_by[ 'oldest' ] = [ "option" => "älteste zuerst", "sql" => "post_date ASC" ];
-$options_order_by[ 'category' ] = [ "option" => "Kategorie", "sql" => "category ASC" ];
+$options_order_by = [
+	'title' => [ "item" => "Bezeichnung", "sql" => "post_title ASC" ],
+	'newest' => [ "item" => "neueste zuerst", "sql" => "post_date DESC" ],
+	'oldest' => [ "item" => "älteste zuerst", "sql" => "post_date ASC" ],
+	'category' => [ "item" => "Kategorie", "sql" => "category ASC" ],
+];
 ?>
 
 <form class="order_by_form">

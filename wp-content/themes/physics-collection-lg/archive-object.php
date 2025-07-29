@@ -37,10 +37,12 @@ $order_by = sanitize_text_field( pods_v('order_by') );
 </form>
 
 <?php
-$options_order_by[ 'title' ] = [ "option" => "Bezeichnung", "sql" => "post_title ASC" ];
-$options_order_by[ 'newest' ] = [ "option" => "neueste zuerst", "sql" => "inventory_number DESC" ];
-$options_order_by[ 'oldest' ] = [ "option" => "älteste zuerst", "sql" => "inventory_number ASC" ];
-$options_order_by[ 'location' ] = [ "option" => "Lagerort", "sql" => "location ASC" ];
+$options_order_by = [
+	'title' => [ "item" => "Bezeichnung", "sql" => "post_title ASC" ],
+	'newest' => [ "item" => "neueste zuerst", "sql" => "inventory_number DESC" ],
+	'oldest' => [ "item" => "älteste zuerst", "sql" => "inventory_number ASC" ],
+	'location' => [ "item" => "Lagerort", "sql" => "location ASC" ],
+];
 ?>
 
 <form class="order_by_form">
@@ -52,8 +54,8 @@ $options_order_by[ 'location' ] = [ "option" => "Lagerort", "sql" => "location A
 	<input type="hidden" value="<?php echo $filter_search; ?> " name="filter_s">
 	<noscript><input type="submit" value="Sortieren"/></noscript>
 </form>
-<?php
 
+<?php
 $params['limit'] = get_option( 'posts_per_page' );
 $params['orderby'] = ( empty( $order_by ) ? 'post_title ASC' : $options_order_by[ $order_by][ 'sql' ] );
 

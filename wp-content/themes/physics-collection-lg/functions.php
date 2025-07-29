@@ -27,10 +27,10 @@ function get_select_form( $name, $taxonomy_or_options, $selected='', $submit_on_
 		$taxonomy = $taxonomy_or_options->name;
 		$label = $taxonomy_or_options->label;
 		$taxonomy_list = get_terms( [ 'taxonomy' => $taxonomy, 'hide_empty' => false ] );
-		$options[] = [ "option" => "-- " . $label . " --" ];
+		$options[ '' ] = [ "item" => "-- " . $label . " --" ];
 
 		foreach ( $taxonomy_list as $taxonomy_item ) {
-			$options[ $taxonomy_item->slug ] = [ "option" => $taxonomy_item->name ];
+			$options[ $taxonomy_item->slug ] = [ "item" => $taxonomy_item->name ];
 		}
 	} else {
 		$options = $taxonomy_or_options;
@@ -40,7 +40,7 @@ function get_select_form( $name, $taxonomy_or_options, $selected='', $submit_on_
 	foreach ( $options as $value=>$option ) {
 		$form_output .= '<option value="' . $value  . '" ' 
 			. ( $value == $selected  ? 'selected' : '' ) . ' ">';
-		$form_output .= $option[ 'option' ] . '</option>';
+		$form_output .= $option[ 'item' ] . '</option>';
 	}
 	$form_output .= '</select>';
 	return $form_output;
