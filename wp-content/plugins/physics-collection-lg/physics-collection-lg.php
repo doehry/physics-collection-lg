@@ -11,18 +11,20 @@ namespace oda\physicscollectionlg;
 defined( 'ABSPATH' ) || exit();
 
 /**
- * Register the Pods configuration file.
- */
-add_action( 'init', 
-    function () { 
-        pods_register_config_file( __DIR__ . '/pods.json' ); 
-    } 
-);
-
-/**
  * Plugin activation function
  */
 function activate_plugin() {
+    if ( !class_exists( 'Pods_Component_I18n' ) ) {
+        pods_components()->toggle( 'translate-pods-admin', true );
+        pods_components()->load();
+    }
+
+    if ( !class_exists( 'Pods_Migrate_Packages' ) ) {
+        pods_components()->toggle( 'migrate-packages', true );
+        pods_components()->load();
+    }
+    \Pods_Migrate_Packages::import( file_get_contents( __DIR__ . '/pods.json' ) );
+
     $teacher_caps = [
         'read' => true,
         'publish_posts' => true,

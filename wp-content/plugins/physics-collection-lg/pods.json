@@ -1,7 +1,33 @@
 {
     "@meta": {
         "version": "3.3.2",
-        "build": 1753860544
+        "build": 1753869275
+    },
+    "settings": {
+        "types_only": "0",
+        "watch_changed_fields": "0",
+        "metadata_integration": "0",
+        "metadata_override_get": "0",
+        "register_meta_integration": "0",
+        "media_modal_fields": "0",
+        "session_auto_start": "0",
+        "dynamic_features_allow": "1",
+        "dynamic_features_enabled": [
+            "display",
+            "form"
+        ],
+        "show_access_restricted_messages": "0",
+        "show_access_admin_notices": "1",
+        "dynamic_features_allow_sql_clauses": "0",
+        "display_callbacks": "customized",
+        "display_callbacks_allowed": "esc_attr,esc_html,my_date",
+        "wisdom_opt_out": "1",
+        "active_components": [
+            "migrate-packages",
+            "roles-and-capabilities",
+            "templates",
+            "translate-pods-admin"
+        ]
     },
     "pods": [
         {
@@ -32,6 +58,7 @@
             "pfat_filter_single": "get_the_archive_description",
             "menu_name_de_DE": "Lagerorte",
             "label_add_new_item_de_DE": "Lagerort hinzuf\u00fcgen",
+            "built_in_post_types_object2": "1",
             "groups": [
                 {
                     "name": "more_fields",
@@ -69,6 +96,7 @@
             "rest_api_field_location": "object",
             "menu_name_de_DE": "Hersteller",
             "label_add_new_item_de_DE": "Hersteller hinzuf\u00fcgen",
+            "built_in_post_types_object2": "1",
             "groups": [
                 {
                     "name": "more_fields",
@@ -562,7 +590,6 @@
                             "rest_pick_response": "array",
                             "rest_pick_depth": "1",
                             "required": "0",
-                            "sister_id": "24",
                             "label_de_DE": "Verbundene Objekte",
                             "logged_in_only": "0",
                             "admin_only": "0",
@@ -710,7 +737,6 @@
                             "type": "pick",
                             "pick_object": "post_type",
                             "pick_val": "object",
-                            "sister_id": "25",
                             "pick_format_type": "multi",
                             "pick_format_single": "dropdown",
                             "pick_format_multi": "list",
@@ -742,6 +768,76 @@
                     ]
                 }
             ]
+        }
+    ],
+    "templates": [
+        {
+            "name": "Object List Template",
+            "uri": "",
+            "code": "<div class=\"object-block-group\">\r\n\t<div class=\"object-info-block\">\r\n\t\t<h4><a href=\"{@guid}\">{@post_title}<\/a><\/h4>\r\n\t\t<p>\r\n\t\t\tInventarnummer: {@inventory_number}<br>\r\n\t\t\tLagerort: {@location}\r\n\t\t\t[if manufacturer]<br>\r\n\t\t\t\tHersteller: {@manufacturer}\r\n\t\t\t[\/if]\r\n\t\t\t[if manufacturer_number]\r\n\t\t\t\t({@manufacturer_number})\r\n\t\t\t[\/if]\r\n\t\t\t[if category]<br>\r\n\t\t\t\tKategorie: {@category}\r\n\t\t\t[\/if]\r\n\t\t<\/p>\r\n\t<\/div>\r\n\t<div class=\"object-img-block\">\r\n\t\t[if image]\r\n\t\t\t<img src=\"{@image._src.thumbnail}\">\r\n\t\t[\/if]\r\n\t<\/div>\r\n<\/div>",
+            "id": 101,
+            "_edit_last": "1",
+            "_edit_lock": "1753864034:1",
+            "admin_only": "0",
+            "restrict_capability": "0",
+            "show_restrict_message": "0",
+            "_pods_capability_allowed": [
+                ""
+            ],
+            "pod_reference": {
+                "pod": "object"
+            }
+        },
+        {
+            "name": "Object Template",
+            "uri": "",
+            "code": "{@description}\r\n<div class=\"object-details\">\r\n\t<p>\r\n\t\t<strong>Inventarnummer:<\/strong> {@inventory_number}<br>\r\n\t\t<strong>Lagerort:<\/strong> {@location}<br>\r\n\t\t<strong>Anzahl:<\/strong> {@quantity}\r\n\t\t[if manufacturer]<br>\r\n\t\t\t<strong>Hersteller:<\/strong> {@manufacturer}\r\n\t\t[\/if]\r\n\t\t[if manufacturer_number]\r\n\t\t\t({@manufacturer_number})\r\n\t\t[\/if]\r\n\t\t[if year_of_purchase]<br>\r\n\t\t\t<strong>Anschaffungsjahr:<\/strong> {@year_of_purchase}\r\n\t\t[\/if]\r\n\t\t[if purchase_cost]<br>\r\n\t\t\t<strong>Anschaffungskosten:<\/strong> {@purchase_cost}\r\n\t\t[\/if]\r\n\t<\/p>\r\n<\/div>\r\n[if attachments]\r\n\t<h4>Dokumente<\/h4>\r\n\t<ul>\r\n\t[each attachments]\r\n\t\t<li><a href=\"{@permalink,esc_url}\">{@post_title}<\/a><\/li>\r\n\t[\/each]\r\n\t<\/ul>\r\n[\/if]\r\n[if related_objects]\r\n\t<h4>andere Objekte<\/h4>\r\n\t[each related_objects]\r\n\t\t[pods name=\"object\" template=\"Object List Template\" id=\"{@ID}\"]\r\n\t[\/each]\r\n[\/if]\r\n[if related_posts]\r\n\t<h4>Beitr\u00e4ge<\/h4>\r\n\t<ul>\r\n\t[each related_posts]\r\n\t\t<li><a href=\"{@permalink,esc_url}\">{@post_title}<\/a><\/li>\r\n\t[\/each]\r\n\t<\/ul>\r\n[\/if]",
+            "id": 72,
+            "_edit_last": "1",
+            "_edit_lock": "1753863873:1",
+            "admin_only": "0",
+            "restrict_capability": "0",
+            "show_restrict_message": "0",
+            "_pods_capability_allowed": [
+                ""
+            ],
+            "pod_reference": {
+                "pod": "object"
+            }
+        },
+        {
+            "name": "Post List Template",
+            "uri": "",
+            "code": "<div class=\"post-block-group\">\r\n\t<div class=\"post-info-block\">\r\n\t\t<h4><a href=\"{@guid}\">{@post_title}<\/a><\/h4>\r\n\t\t<p>\r\n\t\t\tAutor: {@post_author.display_name}<br>\r\n\t\t\tDatum: {@post_date,my_date}<br>\r\n\t\t\tKategorie: {@category.name}\r\n\t\t\t[if post_tag]<br>\r\n\t\t\t\tSchlagw\u00f6rter: {@post_tag.name}\r\n\t\t\t[\/if]\r\n\t\t<\/p>\r\n\t<\/div>\r\n\t<div class=\"post-img-block\">\r\n\t\t[if post_thumbnail]\r\n\t\t\t<img src=\"{@post_thumbnail_url.thumbnail}\">\r\n\t\t[\/if]\r\n\t<\/div>\r\n<\/div>",
+            "id": 2805,
+            "_edit_last": "1",
+            "_edit_lock": "1753863998:1",
+            "admin_only": "0",
+            "restrict_capability": "0",
+            "show_restrict_message": "0",
+            "_pods_capability_allowed": [
+                ""
+            ],
+            "pod_reference": {
+                "pod": "post"
+            }
+        },
+        {
+            "name": "Post Template",
+            "uri": "",
+            "code": "[if attachments]\r\n\t<h4>Anh\u00e4nge<\/h4>\r\n\t<ul>\r\n\t[each attachments]\r\n\t\t<li><a href=\"{@permalink,esc_url}\">{@post_title}<\/a><\/li>\r\n\t[\/each]\r\n\t<\/ul>\r\n[\/if]\r\n[if related_objects]\r\n\t<h4>Objekte<\/h4>\r\n\t[each related_objects]\r\n\t\t[pods name=\"object\" template=\"Object List Template\" id=\"{@ID}\"]\r\n\t[\/each]\r\n[\/if]",
+            "id": 2830,
+            "_edit_last": "1",
+            "_edit_lock": "1753863899:1",
+            "admin_only": "0",
+            "restrict_capability": "0",
+            "show_restrict_message": "0",
+            "_pods_capability_allowed": [
+                ""
+            ],
+            "pod_reference": {
+                "pod": ""
+            }
         }
     ]
 }
