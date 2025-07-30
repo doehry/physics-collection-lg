@@ -7,6 +7,7 @@
  * Requires Plugins: pods
  */
 namespace oda\physicscollectionlg;
+use Pods_Migrate_Packages;
 
 defined( 'ABSPATH' ) || exit();
 
@@ -14,16 +15,16 @@ defined( 'ABSPATH' ) || exit();
  * Plugin activation function
  */
 function activate_plugin() {
-    if ( !class_exists( 'Pods_Component_I18n' ) ) {
+    if ( ! class_exists( 'Pods_Component_I18n' ) ) {
         pods_components()->toggle( 'translate-pods-admin', true );
         pods_components()->load();
     }
 
-    if ( !class_exists( 'Pods_Migrate_Packages' ) ) {
+    if ( ! class_exists( 'Pods_Migrate_Packages' ) ) {
         pods_components()->toggle( 'migrate-packages', true );
         pods_components()->load();
     }
-    \Pods_Migrate_Packages::import( file_get_contents( __DIR__ . '/pods.json' ) );
+   Pods_Migrate_Packages::import( file_get_contents( __DIR__ . '/pods.json' ) );
 
     $teacher_caps = [
         'read' => true,
@@ -126,17 +127,17 @@ register_deactivation_hook( __FILE__, 'oda\physicscollectionlg\deactivate_plugin
  */
 function insert_inventory_number( $post_id, $post, $update ) {
 
-    if ( !$update ) {
-        $current_inventory_base = date( 'y' )*1000;
+    if ( ! $update ) {
+        $current_base = date( 'y' ) * 1000;
         $pod = pods( 'object' );
         $params = [
-            'select' => 'MAX(CAST(inventory_number.meta_value AS UNSIGNED)) AS max_inventory_number',
-            'where' => 'inventory_number.meta_value > ' . $current_inventory_base,
+            'select' => 'MAX(CAST(inventory_number.meta_value AS UNSIGNED)) AS max_number',
+            'where' => 'inventory_number.meta_value > ' . $current_base,
             'limit' => '1',
         ];
         $pod->find( $params )->fetch();
-        $max_inventory_number = $pod->field( 'max_inventory_number' );
-        $inventory_number = empty( $max_inventory_number ) ? $current_inventory_base + 1 : $max_inventory_number + 1 ;
+        $max_number = $pod->field( 'max_number' );
+        $inventory_number = empty( $max_number ) ? $current_base + 1 : $max_number + 1 ;
         add_post_meta( $post_id, 'inventory_number', $inventory_number );
     }
 }
@@ -151,7 +152,7 @@ function set_custom_edit_object_columns( $columns ) {
     unset( $columns['date'] );
     $reordered = [];
     foreach ( $columns as $key => $value ) {
-        if ($key == 'title') {
+        if ( $key == 'title' ) {
             $reordered[ $key ] = $value;
             $reordered['inventory_number'] = $pod->fields( 'inventory_number', 'label' );
             $reordered['location'] = $pod->fields( 'related_location', 'label' );
@@ -170,10 +171,10 @@ add_filter( 'manage_object_posts_columns', 'oda\physicscollectionlg\set_custom_e
 function custom_object_column( $column, $post_id ) {
     $objects = pods( 'object', $post_id );
     switch ( $column ) {
-        case 'inventory_number' :
+        case 'inventory_number':
             echo $objects->field( 'inventory_number' );
             break;
-        case 'location' :
+        case 'location':
             echo $objects->field( 'related_location.name' );
             break;
     }
@@ -185,8 +186,8 @@ add_action( 'manage_object_posts_custom_column' , 'oda\physicscollectionlg\custo
  * Make custom columns sortable
  */
 function object_sortable_columns( $columns ) {
-	$columns[ 'inventory_number' ] = 'inventory_number';
-    $columns[ 'location' ] = 'location';
+	$columns['inventory_number'] = 'inventory_number';
+    $columns['location'] = 'location';
 	return $columns;
 }
 
@@ -195,11 +196,11 @@ add_filter( 'manage_edit-object_sortable_columns', 'oda\physicscollectionlg\obje
 function object_slice_orderby( $query ) {
     $orderby = $query->get( 'orderby' );
     switch ( $orderby ) {
-        case 'inventory_number' :
+        case 'inventory_number':
             $query->set( 'meta_key','inventory_number' );
             $query->set( 'orderby','meta_value' );
             break;
-        case 'location' :
+        case 'location':
             $query->set( 'meta_key','related_location' );
             $query->set( 'orderby','meta_value' );
             break;
@@ -213,10 +214,7 @@ add_action( 'pre_get_posts', 'oda\physicscollectionlg\object_slice_orderby' );
  */
 add_action('admin_enqueue_scripts',
     function () {
-        wp_enqueue_style(
-            'my-admin-style', 
-            plugin_dir_url( __FILE__ ) . '/css/style-admin.css'
-        );
+        wp_enqueue_style( 'my-admin-style', plugin_dir_url( __FILE__ ) . '/css/style-admin.css' );
     }
 );
 
@@ -224,34 +222,34 @@ add_action('admin_enqueue_scripts',
  * Do not allow changes to admins if the current user is not an admin
  */
 function my_map_meta_cap( $caps, $cap, $user_id, $args ) {
-  $check_caps = [
-    'edit_user',
-    'promote_user',
-    'delete_user',
-  ];
-  if ( !in_array( $cap, $check_caps ) || current_user_can( 'administrator' ) ) {
-    return $caps;
-  }
-  $other = get_user_by( 'id', $args[0] ?? false );
-  if ( $other && $other->has_cap( 'administrator' ) ) {
-    echo $cap ." ";
-    $caps[] = 'do_not_allow';
-  }
-  return $caps;
+    $check_caps = [
+        'edit_user',
+        'promote_user',
+        'delete_user',
+    ];
+    if ( !in_array( $cap, $check_caps ) || current_user_can( 'administrator' ) ) {
+        return $caps;
+    }
+    $other = get_user_by( 'id', $args[0] ?? false );
+    if ( $other && $other->has_cap( 'administrator' ) ) {
+        echo $cap ." ";
+        $caps[] = 'do_not_allow';
+    }
+return $caps;
 }
 
-add_filter('map_meta_cap', 'oda\physicscollectionlg\my_map_meta_cap', 10, 4 );
+add_filter( 'map_meta_cap', 'oda\physicscollectionlg\my_map_meta_cap', 10, 4 );
 
 /**
  * Remove 'Administrator' from the list of roles if the current user is not an admin
  */
 function editable_roles( $roles ){
-    if ( isset( $roles['administrator'] ) && !current_user_can( 'administrator' ) ){
+    if ( isset( $roles['administrator'] ) && !current_user_can( 'administrator' ) ) {
         unset( $roles['administrator'] );
     }
     return $roles;
 }
 
-add_filter('editable_roles', 'oda\physicscollectionlg\editable_roles');
+add_filter( 'editable_roles', 'oda\physicscollectionlg\editable_roles' );
 
 ?>

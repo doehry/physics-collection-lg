@@ -21,11 +21,11 @@ $categories = get_taxonomy( 'category' );
 $locations = get_taxonomy( 'location' );
 $manufacturers = get_taxonomy( 'manufacturer' );
 
-$filter_cat = sanitize_text_field( pods_v('filter_cat') );
-$filter_loc = sanitize_text_field( pods_v('filter_loc') );
-$filter_man = sanitize_text_field( pods_v('filter_man') );
-$filter_search = sanitize_text_field( pods_v('filter_s') );
-$order_by = sanitize_text_field( pods_v('order_by') );
+$filter_cat = sanitize_text_field( pods_v( 'filter_cat' ) );
+$filter_loc = sanitize_text_field( pods_v( 'filter_loc' ) );
+$filter_man = sanitize_text_field( pods_v( 'filter_man' ) );
+$filter_search = sanitize_text_field( pods_v( 'filter_s' ) );
+$order_by = sanitize_text_field( pods_v( 'order_by' ) );
 ?>
 <form class="filter_form">
 	<?php echo get_select_form( 'filter_cat', $categories, $filter_cat );  ?>

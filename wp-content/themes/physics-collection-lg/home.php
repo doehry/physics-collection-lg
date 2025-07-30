@@ -19,10 +19,10 @@ $pods = pods( 'post' );
 $categories = get_taxonomy( 'category' );
 $tags = get_taxonomy( 'post_tag' );
 
-$filter_cat = sanitize_text_field( pods_v('filter_cat') );
-$filter_tag = sanitize_text_field( pods_v('filter_tag') );
-$filter_search = sanitize_text_field( pods_v('filter_s') );
-$order_by = sanitize_text_field( pods_v('order_by') );
+$filter_cat = sanitize_text_field( pods_v( 'filter_cat' ) );
+$filter_tag = sanitize_text_field( pods_v( 'filter_tag' ) );
+$filter_search = sanitize_text_field( pods_v( 'filter_s' ) );
+$order_by = sanitize_text_field( pods_v( 'order_by' ) );
 
 ?>
 <form class="filter_form">
