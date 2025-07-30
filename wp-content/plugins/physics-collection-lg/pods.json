@@ -135,7 +135,7 @@
             "archive_show_in_taxonomies_category": "1",
             "supports_quick_edit": "0",
             "default_status": "publish",
-            "capability_type": "post",
+            "capability_type": "custom",
             "has_archive": "1",
             "pfat_enable": "1",
             "pfat_single": "Object Template",
