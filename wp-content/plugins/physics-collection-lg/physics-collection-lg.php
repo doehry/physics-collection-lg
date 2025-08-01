@@ -25,7 +25,7 @@ function activate_plugin() {
         pods_components()->toggle( 'migrate-packages', true );
         pods_components()->load();
     }
-   Pods_Migrate_Packages::import( file_get_contents( __DIR__ . '/pods.json' ) );
+    Pods_Migrate_Packages::import( file_get_contents( __DIR__ . '/pods.json' ) );
 
     $teacher_caps = [
         'read' => true,
@@ -255,6 +255,7 @@ add_filter( 'editable_roles', 'oda\physicscollectionlg\editable_roles' );
 
 /**
  *  Make the frontend private
+ *  from https://github.com/reimersjan/wp-logged-in-only
  */
 function logged_in_only_frontend() {
 	if ( ! is_user_logged_in() ) {
@@ -265,6 +266,7 @@ add_action( 'template_redirect', 'oda\physicscollectionlg\logged_in_only_fronten
 
 /**
  * Make the REST API private
+ * from https://github.com/reimersjan/wp-logged-in-only
  */
 function logged_in_only_rest_api( $result ) {
 
