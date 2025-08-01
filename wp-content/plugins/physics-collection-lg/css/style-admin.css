@@ -2,14 +2,6 @@
 	width: 12em;
 }
 
-.post-type-object .column-title {
-    width: 40%;
-}
-
 .post-type-object .column-location {
     width: 7em;
-}
-
-.post-type-object .column-categories {
-    width: 30%;
 }
