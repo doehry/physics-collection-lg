@@ -8,6 +8,7 @@
  */
 namespace oda\physicscollectionlg;
 use Pods_Migrate_Packages;
+use WP_Error;
 
 defined( 'ABSPATH' ) || exit();
 
@@ -251,5 +252,32 @@ function editable_roles( $roles ){
 }
 
 add_filter( 'editable_roles', 'oda\physicscollectionlg\editable_roles' );
+
+/**
+ *  Make the frontend private
+ */
+function logged_in_only_frontend() {
+	if ( ! is_user_logged_in() ) {
+		auth_redirect();
+	}
+}
+add_action( 'template_redirect', 'oda\physicscollectionlg\logged_in_only_frontend' );
+
+/**
+ * Make the REST API private
+ */
+function logged_in_only_rest_api( $result ) {
+
+	if ( ! empty( $result ) ) {
+		return $result;
+	}
+
+	if ( ! is_user_logged_in() ) {
+		return new WP_Error( 'rest_not_logged_in', 'API Requests are only supported for authenticated requests.', array( 'status' => 401, ) );
+	}
+
+	return $result;
+}
+add_filter( 'rest_authentication_errors', 'oda\physicscollectionlg\logged_in_only_rest_api' );
 
 ?>
