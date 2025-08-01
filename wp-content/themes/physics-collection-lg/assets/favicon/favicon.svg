@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><svg width="32" height="32" viewBox="0 0 8.4666666 8.466667" version="1.1" id="SvgjsSvg1121" inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)" sodipodi:docname="Logo_LG.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview id="SvgjsSodipodi:namedview1120" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" inkscape:document-units="mm" inkscape:zoom="6.5113568" inkscape:cx="38.701611" inkscape:cy="74.945977" inkscape:window-width="2560" inkscape:window-height="1371" inkscape:window-x="0" inkscape:window-y="0" inkscape:window-maximized="1" inkscape:current-layer="layer1"></sodipodi:namedview>
+  <defs id="SvgjsDefs1119">
+    <clipPath clipPathUnits="userSpaceOnUse" id="SvgjsClipPath1118">
+      <path id="SvgjsPath1117" d="m -173.0166,291.6413 h 1190.55 v -841.89 h -1190.55 z" style="stroke-width:0.999998"></path>
+    </clipPath>
+    <clipPath clipPathUnits="userSpaceOnUse" id="SvgjsClipPath1116">
+      <path id="SvgjsPath1115" d="m -272.3815,403.212 h 1190.55 v -841.89 h -1190.55 z" style="stroke-width:0.999998"></path>
+    </clipPath>
+  </defs>
+  <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="SvgjsG1114" transform="translate(-28.201074,-29.835917)">
+    <g id="SvgjsG1113" transform="matrix(0.0434188,0,0,0.0434188,29.087054,28.540477)">
+      <path id="SvgjsPath1112" style="fill:#cf472e;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778" d="M 28.488028,224.83595 H 125.98804 V 127.33593 H 28.488028 Z"></path>
+      <path id="SvgjsPath1111" style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778" d="M 28.488028,127.33593 H 125.98804 V 29.835917 H 28.488028 Z"></path>
+      <g transform="matrix(0.35277777,0,0,-0.35277777,40.760668,84.220597)" id="SvgjsG1110" clip-path="url(#clipPath2)">
+        <path id="SvgjsPath1109" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 v -91.574 h 56.706 v -30.648 H -35.602 V 0 Z"></path>
+      </g>
+      <g transform="matrix(0.35277777,0,0,-0.35277777,81.614538,128.24381)" id="SvgjsG1108" clip-path="url(#clipPath1)">
+        <path id="SvgjsPath1107" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" d="m 0,0 c -34.501,0 -54.323,20.919 -54.323,55.421 v 16.15 c 0,33.583 22.941,55.972 60.744,55.972 33.768,0 54.138,-15.965 54.138,-43.494 V 81.664 H 25.324 v 1.652 c 0,8.44 -5.505,15.231 -18.903,15.231 -16.517,0 -24.59,-11.378 -24.59,-27.71 V 56.339 c 0,-17.435 7.158,-28.262 24.041,-28.262 13.395,0 22.205,7.525 23.124,18.718 H 5.506 V 69.367 H 62.394 V 2.568 H 47.529 L 42.208,20.737 C 35.05,9.908 22.387,0 0,0"></path>
+      </g>
+    </g>
+  </g>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>

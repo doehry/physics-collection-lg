@@ -4,12 +4,41 @@
  */
 add_action( 'wp_enqueue_scripts', 
 	function () {
-		wp_enqueue_style( 
-			'physics-collection-lg-style', 
-			get_stylesheet_uri()
-		);
+		wp_enqueue_style( 'physics-collection-lg-style', get_stylesheet_uri() );
 	}, 20 
 );
+
+/** 
+ * add favicon 
+ * created with https://realfavicongenerator.net/
+ */
+add_action( 'wp_head' , 
+	function() { 
+		echo '<link rel="icon" type="image/png" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon-96x96.png" sizes="96x96" >';
+		echo '<link rel="icon" type="image/svg+xml" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon.svg" >';
+		echo '<link rel="shortcut icon" href="' . get_stylesheet_directory_uri() . '/assets/favicon/favicon.ico" >';
+		echo '<link rel="apple-touch-icon" sizes="180x180" href="' . get_stylesheet_directory_uri() . '/assets/favicon/apple-touch-icon.png" >';
+		echo '<meta name="apple-mobile-web-app-title" content="Physik" >';
+		echo '<link rel="manifest" href="' . get_stylesheet_directory_uri() . '/assets/favicon/site.webmanifest" >';
+	}
+);
+
+/** 
+ * replace logo on login page
+ */
+function custom_login_page_logo() {
+	$logo_url = get_stylesheet_directory_uri() .'/assets/images/Logo_LG_Physiksammlung.svg';
+    echo '<style type="text/css">
+		#login h1 a {
+			background-image: url(' .$logo_url .');
+			height: 100px;
+			width: 300px;
+			background-size: 300px 100px;
+			background-repeat: no-repeat;
+		}
+	</style>';
+}
+add_action( 'login_head', 'custom_login_page_logo' );
 
 /** 
  * date format function for use in pods magic tags

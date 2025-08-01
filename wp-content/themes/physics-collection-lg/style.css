@@ -1,5 +1,5 @@
 /**
- * Theme Name: physics-collection-lg
+ * Theme Name: Physics Collection LG
  * Author:     Daniel Oehry
  * Template:   twentytwentyone
  * Version:    1.0
@@ -40,9 +40,15 @@
 
     /* Colors */
     --global--color-background: var(--global--color-white);
+
+    /* Header */
+	--branding--logo--max-width: 300px;
+	--branding--logo--max-height: 100px;
+	--branding--logo--max-width-mobile: 240px;
+	--branding--logo--max-height-mobile: 80px;
  }
 
-/* Object/Post List */
+/* Object and Post List */
 .object-block-group {
     background: rgb(235, 235, 250);
     padding: 1em;
