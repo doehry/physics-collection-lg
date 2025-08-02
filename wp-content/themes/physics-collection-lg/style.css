@@ -59,7 +59,9 @@
 }
 
 .object-img-block, .post-img-block {
+    margin-left: auto;
     margin-top: 1em;
+    width: 150px;
 }
 
 @media only screen and (min-width: 822px) {
@@ -72,10 +74,8 @@
 
     .object-img-block, .post-img-block {
         display: block;
-        margin-left: auto;
         margin-top: 0em;
         min-height: 150px;
-        width: 150px;
     }
 
     .object-info-block, .post-info-block {
