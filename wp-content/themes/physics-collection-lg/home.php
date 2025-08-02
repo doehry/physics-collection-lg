@@ -44,7 +44,7 @@ $options_order_by = [
 
 <form class="order_by_form">
 	<label for="order_by">Sortieren nach</label>
-	<?php echo get_select_form( "order_by", $options_order_by, $order_by ); ?>
+	<?php echo get_select_form( 'order_by', $options_order_by, $order_by ); ?>
 	<input type="hidden" value="<?php echo $filter_cat; ?> " name="filter_cat">
 	<input type="hidden" value="<?php echo $filter_tag; ?> " name="filter_tag">
 	<input type="hidden" value="<?php echo $filter_search; ?> " name="filter_s">
@@ -53,12 +53,12 @@ $options_order_by = [
 <?php
 
 $params['limit'] = get_option( 'posts_per_page' );
-$params['orderby'] = ( empty( $order_by ) ? 'post_title ASC' : $options_order_by[ $order_by][ 'sql' ] );
+$params['orderby'] = ( empty( $order_by ) ? 'post_title ASC' : $options_order_by[ $order_by ]['sql'] );
 
-if ( !empty( $filter_cat ) ) {
+if ( ! empty( $filter_cat ) ) {
 	$params['where'] = "category.slug = '" . $filter_cat . "'";
 }
-if (!empty( $filter_search ) ) {
+if ( ! empty( $filter_search ) ) {
 	$params['where'] = "post_title LIKE '%" . $filter_search ."%' "
 		. "OR post_content LIKE '%" . $filter_search ."%' "
 		. "OR manufacturer_number.meta_value LIKE '%" . $filter_search . "%'";
@@ -71,9 +71,9 @@ if ( $pods->total() > 0 ) :
 		echo $pods->template( 'Post List Template' );
 	endwhile;
 
-	echo $pods->pagination( array( 'type' => 'paginate' ) );
+	echo $pods->pagination( [ 'type' => 'paginate' ] );
 else :
-	echo "<p>Es wurden keine Beiträge gefunden.</p>";
+	echo '<p>Es wurden keine Beiträge gefunden.</p>';
 endif;
 ?>
 </div><!-- .entry-content -->

@@ -1,7 +1,7 @@
 {
     "@meta": {
         "version": "3.3.2",
-        "build": 1753869275
+        "build": 1754162536
     },
     "settings": {
         "types_only": "0",
@@ -44,7 +44,7 @@
             "publicly_queryable": "1",
             "dynamic_features_allow": "inherit",
             "rest_enable": "1",
-            "_migrated_28": "1",
+            "_migrated_28": "0",
             "built_in_post_types_object": "1",
             "label_i18n": "Locations",
             "label_i18n_default": "Locations",
@@ -172,6 +172,9 @@
             "label_view_item_de_DE": "Objekt anzeigen",
             "label_view_items_de_DE": "Objekte anzeigen",
             "label_all_items_de_DE": "Alle Objekte",
+            "disable_create_posts": "0",
+            "built_in_taxonomies_post_tag": "1",
+            "archive_show_in_taxonomies_post_tag": "1",
             "groups": [
                 {
                     "name": "data",
@@ -596,7 +599,8 @@
                             "restrict_role": "0",
                             "restrict_capability": "0",
                             "hidden": "0",
-                            "read_only": "0"
+                            "read_only": "0",
+                            "sister_id": "24"
                         },
                         {
                             "name": "related_posts",
@@ -654,7 +658,7 @@
             "type": "post_type",
             "storage": "meta",
             "object": "post",
-            "_migrated_28": "1",
+            "_migrated_28": "0",
             "pfat_enable": "1",
             "pfat_single": "Post Template",
             "pfat_filter_single": "the_content",
@@ -763,7 +767,8 @@
                             "rest_pick_response": "array",
                             "rest_pick_depth": "1",
                             "required": "0",
-                            "label_de_DE": "Verbundene Objekte"
+                            "label_de_DE": "Verbundene Objekte",
+                            "sister_id": "25"
                         }
                     ]
                 }
@@ -826,7 +831,7 @@
             "name": "Post Template",
             "uri": "",
             "code": "[if attachments]\r\n\t<h4>Anh\u00e4nge<\/h4>\r\n\t<ul>\r\n\t[each attachments]\r\n\t\t<li><a href=\"{@permalink,esc_url}\">{@post_title}<\/a><\/li>\r\n\t[\/each]\r\n\t<\/ul>\r\n[\/if]\r\n[if related_objects]\r\n\t<h4>Objekte<\/h4>\r\n\t[each related_objects]\r\n\t\t[pods name=\"object\" template=\"Object List Template\" id=\"{@ID}\"]\r\n\t[\/each]\r\n[\/if]",
-            "id": 2830,
+            "id": 2969,
             "_edit_last": "1",
             "_edit_lock": "1753863899:1",
             "admin_only": "0",

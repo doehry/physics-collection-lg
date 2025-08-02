@@ -1,6 +1,6 @@
 <?php
 /** 
- * load style.css
+ * Load style.css
  */
 add_action( 'wp_enqueue_scripts', 
 	function () {
@@ -9,7 +9,7 @@ add_action( 'wp_enqueue_scripts',
 );
 
 /** 
- * add favicon 
+ * Add favicon 
  * created with https://realfavicongenerator.net/
  */
 add_action( 'wp_head' , 
@@ -24,31 +24,32 @@ add_action( 'wp_head' ,
 );
 
 /** 
- * replace logo on login page
+ * Replace logo on login page
  */
-function custom_login_page_logo() {
-	$logo_url = get_stylesheet_directory_uri() .'/assets/images/Logo_LG_Physiksammlung.svg';
-    echo '<style type="text/css">
-		#login h1 a {
-			background-image: url(' .$logo_url .');
-			height: 100px;
-			width: 300px;
-			background-size: 300px 100px;
-			background-repeat: no-repeat;
-		}
-	</style>';
-}
-add_action( 'login_head', 'custom_login_page_logo' );
+add_action( 'login_head', 
+	function () {
+		$logo_url = get_stylesheet_directory_uri() .'/assets/images/Logo_LG_Physiksammlung.svg';
+		echo '<style type="text/css">
+			#login h1 a {
+				background-image: url(' .$logo_url .');
+				height: 100px;
+				width: 300px;
+				background-size: 300px 100px;
+				background-repeat: no-repeat;
+			}
+		</style>';
+	}
+);
 
 /** 
- * date format function for use in pods magic tags
+ * Date format function for use in pods magic tags
  */
 function my_date($input_date) {
 	return date( "d.m.Y", strtotime( $input_date ) );  
 }
 
 /**
- * return select from taxonomy or options array
+ * Return select from taxonomy or options array
  */
 function get_select_form( $name, $taxonomy_or_options, $selected='', $submit_on_change=true ) {
 	if ( is_a( $taxonomy_or_options, 'WP_Taxonomy' ) ) {
@@ -64,14 +65,18 @@ function get_select_form( $name, $taxonomy_or_options, $selected='', $submit_on_
 	} else {
 		$options = $taxonomy_or_options;
 	}
+
 	$form_output = '<select name="' . $name . '" id="' . $name . '" ' 
 		. ( $submit_on_change ? 'onchange="this.form.submit()"' : '') . ' >';
+
 	foreach ( $options as $value=>$option ) {
 		$form_output .= '<option value="' . $value  . '" ' 
 			. ( $value == $selected  ? 'selected' : '' ) . ' ">';
 		$form_output .= $option[ 'item' ] . '</option>';
 	}
+
 	$form_output .= '</select>';
+
 	return $form_output;
 }
 

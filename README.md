@@ -1,10 +1,10 @@
-# physics-collection-lg
+# Physics Collection LG
 
 ## About the project
 
-Physics Collection LG is a Wordpress-based administration system for the physics collection at Liechtensteinisches Gymnasium.
+Physics Collection LG is a WordPress-based administration system for the physics collection at Liechtensteinisches Gymnasium.
 
-The repository contains the entire Wordpress installation including all necessary plugins. The code of the actual project is implemented as a child theme of Twenty Twenty One and is located in the folder wp-content/themes/physics-collection-lg.
+The repository contains the entire WordPress installation including all necessary plugins. The code of the actual project is implemented as a plugin and a child theme of Twenty Twenty-One and is located in the folders wp-content/plugins/physics-collection-lg and wp-content/themes/physics-collection-lg.
 
 ## Built with
 
@@ -27,5 +27,5 @@ Space on a web server, supporting
 2. Create a database for WordPress on your web server, as well as a MySQL (or MariaDB) user who has all privileges for accessing and modifying it.
 3. Rename wp-config-sample.php to wp-config.php, then edit the file and add your database information.
 4. Run the WordPress installation script by accessing the URL in a web browser.
-5. Activate the plugin physics-collection-lg.
-6. Change the theme to physics-collection-lg.
+5. Activate the plugin Physics Collection LG.
+6. Change the theme to Physics Collection LG.

@@ -4,11 +4,9 @@
  *
  * Contains the closing of the #content div and all content after.
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
  * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
+ * @subpackage physics-collection-lg
+ * @since physics-collection-lg 0.1
  */
 
 ?>

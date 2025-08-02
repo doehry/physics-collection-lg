@@ -124,7 +124,7 @@ function deactivate_plugin() {
 register_deactivation_hook( __FILE__, 'oda\physicscollectionlg\deactivate_plugin' );
 
 /**
- * Add auto increment inventory number
+ * Insert auto increment inventory number
  */
 function insert_inventory_number( $post_id, $post, $update ) {
 
@@ -167,7 +167,7 @@ function set_custom_edit_object_columns( $columns ) {
 add_filter( 'manage_object_posts_columns', 'oda\physicscollectionlg\set_custom_edit_object_columns' );
 
 /**
- * Add data to the custom columns for the objekt post type:
+ * Add data to the custom columns for the object post type:
  */
 function custom_object_column( $column, $post_id ) {
     $objects = pods( 'object', $post_id );
@@ -211,7 +211,7 @@ function object_slice_orderby( $query ) {
 add_action( 'pre_get_posts', 'oda\physicscollectionlg\object_slice_orderby' );
 
 /**
- * load style-admin.css
+ * Load style-admin.css
  */
 add_action('admin_enqueue_scripts',
     function () {
@@ -228,7 +228,7 @@ function my_map_meta_cap( $caps, $cap, $user_id, $args ) {
         'promote_user',
         'delete_user',
     ];
-    if ( !in_array( $cap, $check_caps ) || current_user_can( 'administrator' ) ) {
+    if ( ! in_array( $cap, $check_caps ) || current_user_can( 'administrator' ) ) {
         return $caps;
     }
     $other = get_user_by( 'id', $args[0] ?? false );
