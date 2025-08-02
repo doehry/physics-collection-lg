@@ -24,10 +24,11 @@ the_post();
 
 	<footer class="entry-footer default-max-width">
 		<div class="posted-by"></div>
-		<?php if ( has_category() ) { ?>
+			<?php 
+			if ( has_category() || has_tag() ) { 
 
-			<div class="post-taxonomies">
-			<?php
+				echo '<div class="post-taxonomies">';
+
 				$categories_list = get_the_category_list( wp_get_list_item_separator() );
 				if ( $categories_list ) {
 					printf(
@@ -36,9 +37,18 @@ the_post();
 						$categories_list // phpcs:ignore WordPress.Security.EscapeOutput
 					);
 				}
+
+				$tags_list = get_the_tag_list( '', wp_get_list_item_separator() );
+				if ( $tags_list && ! is_wp_error( $tags_list ) ) {
+					printf(
+						/* translators: %s: List of tags. */
+						'<span class="tags-links">' . esc_html__( 'Tagged %s', 'twentytwentyone' ) . '</span>',
+						$tags_list // phpcs:ignore WordPress.Security.EscapeOutput
+					);
+				}
+				echo '</div>';
+			}
 			?>
-			</div>
-		<?php } ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
 
