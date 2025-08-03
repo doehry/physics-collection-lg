@@ -8,10 +8,11 @@ The repository contains the entire WordPress installation including all necessar
 
 ## Built with
 
-* [Wordpress 6.8.2](https://wordpress.org)
+* [WordPress 6.8.2](https://wordpress.org)
 * [Pods – Custom Content Types and Fields 3.3.2](https://wordpress.org/plugins/pods)
+* [WordPress Importer 0.8.4](https://wordpress.org/plugins/wordpress-importer/)
 * [WP Extended Search 2.2.1](https://wordpress.org/plugins/wp-extended-search)
-* [Wordpress Theme Twenty Twenty One 2.5](https://wordpress.org/themes/twentytwentyone)
+* [WordPress Theme Twenty Twenty One 2.5](https://wordpress.org/themes/twentytwentyone)
 
 ## Requirements
 
