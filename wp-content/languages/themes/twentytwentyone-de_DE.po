@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Twenty Twenty-One package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-06-14 22:16:04+0000\n"
+"PO-Revision-Date: 2025-08-03 16:31:05+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -398,7 +398,7 @@ msgstr "Suchen"
 
 #: searchform.php:24
 msgid "Search&hellip;"
-msgstr "Suche&nbsp;&hellip;"
+msgstr "Suchen …"
 
 #. translators: %d: The number of search results.
 #: search.php:33
