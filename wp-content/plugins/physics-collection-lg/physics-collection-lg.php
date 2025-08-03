@@ -25,7 +25,7 @@ function activate_plugin() {
         pods_components()->toggle( 'migrate-packages', true );
         pods_components()->load();
     }
-    Pods_Migrate_Packages::import( file_get_contents( __DIR__ . '/pods.json' ) );
+    Pods_Migrate_Packages::import( file_get_contents( __DIR__ . '/includes/pods.json' ) );
 
     $teacher_caps = [
         'read' => true,
