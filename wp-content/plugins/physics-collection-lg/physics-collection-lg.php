@@ -6,7 +6,7 @@
  * Requires at least: 6.8
  * Requires Plugins: pods
  */
-namespace oda\physicscollectionlg;
+namespace Physics_Collection_LG;
 use Pods_Migrate_Packages;
 use WP_Error;
 
@@ -85,7 +85,7 @@ function activate_plugin() {
     update_option( 'default_role', 'teacher' );
 }
 
-register_activation_hook( __FILE__, 'oda\physicscollectionlg\activate_plugin' );
+register_activation_hook( __FILE__, 'Physics_Collection_LG\activate_plugin' );
 
 /**
  * Plugin deactivation function
@@ -121,7 +121,7 @@ function deactivate_plugin() {
     }
 }
 
-register_deactivation_hook( __FILE__, 'oda\physicscollectionlg\deactivate_plugin' );
+register_deactivation_hook( __FILE__, 'Physics_Collection_LG\deactivate_plugin' );
 
 /**
  * Insert auto increment inventory number
@@ -143,7 +143,7 @@ function insert_inventory_number( $post_id, $post, $update ) {
     }
 }
 
-add_action( 'save_post_object', 'oda\physicscollectionlg\insert_inventory_number', 10, 3 );
+add_action( 'save_post_object', 'Physics_Collection_LG\insert_inventory_number', 10, 3 );
 
 /**
  * Add custom columns to the object post type
@@ -164,7 +164,7 @@ function set_custom_edit_object_columns( $columns ) {
     return $reordered;
 }
 
-add_filter( 'manage_object_posts_columns', 'oda\physicscollectionlg\set_custom_edit_object_columns' );
+add_filter( 'manage_object_posts_columns', 'Physics_Collection_LG\set_custom_edit_object_columns' );
 
 /**
  * Add data to the custom columns for the object post type:
@@ -181,7 +181,7 @@ function custom_object_column( $column, $post_id ) {
     }
 }
 
-add_action( 'manage_object_posts_custom_column' , 'oda\physicscollectionlg\custom_object_column', 10, 2 );
+add_action( 'manage_object_posts_custom_column' , 'Physics_Collection_LG\custom_object_column', 10, 2 );
 
 /**
  * Make custom columns sortable
@@ -192,7 +192,7 @@ function object_sortable_columns( $columns ) {
 	return $columns;
 }
 
-add_filter( 'manage_edit-object_sortable_columns', 'oda\physicscollectionlg\object_sortable_columns' );
+add_filter( 'manage_edit-object_sortable_columns', 'Physics_Collection_LG\object_sortable_columns' );
 
 function object_slice_orderby( $query ) {
     $orderby = $query->get( 'orderby' );
@@ -208,7 +208,7 @@ function object_slice_orderby( $query ) {
     }
 }
 
-add_action( 'pre_get_posts', 'oda\physicscollectionlg\object_slice_orderby' );
+add_action( 'pre_get_posts', 'Physics_Collection_LG\object_slice_orderby' );
 
 /**
  * Load style-admin.css
@@ -239,7 +239,7 @@ function my_map_meta_cap( $caps, $cap, $user_id, $args ) {
 return $caps;
 }
 
-add_filter( 'map_meta_cap', 'oda\physicscollectionlg\my_map_meta_cap', 10, 4 );
+add_filter( 'map_meta_cap', 'Physics_Collection_LG\my_map_meta_cap', 10, 4 );
 
 /**
  * Remove 'Administrator' from the list of roles if the current user is not an admin
@@ -251,7 +251,7 @@ function editable_roles( $roles ){
     return $roles;
 }
 
-add_filter( 'editable_roles', 'oda\physicscollectionlg\editable_roles' );
+add_filter( 'editable_roles', 'Physics_Collection_LG\editable_roles' );
 
 /**
  *  Make the frontend private
@@ -262,7 +262,7 @@ function logged_in_only_frontend() {
 		auth_redirect();
 	}
 }
-add_action( 'template_redirect', 'oda\physicscollectionlg\logged_in_only_frontend' );
+add_action( 'template_redirect', 'Physics_Collection_LG\logged_in_only_frontend' );
 
 /**
  * Make the REST API private
@@ -280,6 +280,6 @@ function logged_in_only_rest_api( $result ) {
 
 	return $result;
 }
-add_filter( 'rest_authentication_errors', 'oda\physicscollectionlg\logged_in_only_rest_api' );
+add_filter( 'rest_authentication_errors', 'Physics_Collection_LG\logged_in_only_rest_api' );
 
 ?>
