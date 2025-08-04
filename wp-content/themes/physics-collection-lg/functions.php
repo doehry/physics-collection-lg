@@ -28,7 +28,8 @@ add_action( 'wp_head' ,
  */
 add_action( 'login_head', 
 	function () {
-		$logo_url = get_stylesheet_directory_uri() .'/assets/images/Logo_LG_Physiksammlung.svg';
+		$logo_url = get_stylesheet_directory_uri() .
+			'/assets/images/Logo_LG_Physiksammlung.svg';
 		echo '<style type="text/css">
 			#login h1 a {
 				background-image: url(' .$logo_url .');
@@ -44,8 +45,8 @@ add_action( 'login_head',
 /** 
  * Date format function for use in pods magic tags
  */
-function my_date($input_date) {
-	return date( "d.m.Y", strtotime( $input_date ) );  
+function my_date( $input_date ) {
+	return date( get_option( 'date_format' ), strtotime( $input_date ) );
 }
 
 /**
@@ -57,22 +58,22 @@ function get_select_form( $name, $taxonomy_or_options, $selected='', $submit_on_
 		$taxonomy = $taxonomy_or_options->name;
 		$label = $taxonomy_or_options->label;
 		$taxonomy_list = get_terms( [ 'taxonomy' => $taxonomy, 'hide_empty' => false ] );
-		$options[ '' ] = [ "item" => "-- " . $label . " --" ];
+		$options[ '' ] = [ 'item' => '-- ' . $label . ' --' ];
 
 		foreach ( $taxonomy_list as $taxonomy_item ) {
-			$options[ $taxonomy_item->slug ] = [ "item" => $taxonomy_item->name ];
+			$options[ $taxonomy_item->slug ] = [ 'item' => $taxonomy_item->name ];
 		}
 	} else {
 		$options = $taxonomy_or_options;
 	}
 
-	$form_output = '<select name="' . $name . '" id="' . $name . '" ' 
-		. ( $submit_on_change ? 'onchange="this.form.submit()"' : '') . ' >';
+	$form_output = '<select name="' . $name . '" id="' . $name . '" ' .
+		( $submit_on_change ? 'onchange="this.form.submit()"' : '') . ' >';
 
 	foreach ( $options as $value=>$option ) {
-		$form_output .= '<option value="' . $value  . '" ' 
-			. ( $value == $selected  ? 'selected' : '' ) . ' ">';
-		$form_output .= $option[ 'item' ] . '</option>';
+		$form_output .= '<option value="' . $value  . '" ' .
+			( $value == $selected  ? 'selected' : '' ) . ' ">' .
+			$option[ 'item' ] . '</option>';
 	}
 
 	$form_output .= '</select>';
