@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Twenty Twenty-One package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-08-03 16:31:05+0000\n"
+"PO-Revision-Date: 2025-08-09 22:53:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -575,7 +575,7 @@ msgstr "Menü"
 #: functions.php:69 inc/starter-content.php:154
 #: template-parts/header/site-nav.php:13
 msgid "Primary menu"
-msgstr "Hauptmenü"
+msgstr "Primäres Menü"
 
 #. translators: Hidden accessibility text.
 #: header.php:29
