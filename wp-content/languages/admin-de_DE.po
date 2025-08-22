@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.8.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-07-08 14:40:05+0000\n"
+"PO-Revision-Date: 2025-08-13 20:50:37+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -3281,7 +3281,7 @@ msgstr "Du kannst diesen Kommentar nicht bearbeiten, da der zugehörige Beitrag 
 #: wp-admin/async-upload.php:70
 msgctxt "media item"
 msgid "Success"
-msgstr "Erfolg"
+msgstr "Erfolgreich"
 
 #. translators: 1: Current WordPress version, 2: Plugin name, 3: Required
 #. WordPress version.
@@ -12846,7 +12846,7 @@ msgstr "Kategorien können mithilfe des <a href=\"%s\">Kategorie-in-Schlagwort-K
 
 #: wp-admin/import.php:25
 msgid "This screen lists links to plugins to import data from blogging/content management platforms. Choose the platform you want to import from, and click Install Now when you are prompted in the popup window. If your platform is not listed, click the link to search the plugin directory for other importer plugins to see if there is one for your platform."
-msgstr "Hier findest du eine Liste von Plugins, mit denen du Daten aus anderen Blog- oder CMS-Systemen importieren kannst. Wähle die Plattform, aus der du importieren möchtest und klicke auf &#8222;Installieren&#8220; sobald du in einem Pop-up Fenster dazu aufgefordert wirst. Sollte deine Plattform hier nicht aufgelistet sein, kannst du über das WordPress.org-Plugin-Verzeichnis nach einem geeigneten Import-Plugin suchen, um dort hoffentlich etwas für deinen Daten-Import zu finden."
+msgstr "Hier findest du eine Liste von Plugins, mit denen du Daten aus anderen Blog- oder CMS-Systemen importieren kannst. Wähle die Plattform, aus der du importieren möchtest und klicke auf &#8222;Jetzt installieren&#8220;. Sollte deine Plattform hier nicht aufgelistet sein, kannst du über das Plugin-Verzeichnis nach einem geeigneten Import-Plugin suchen, um dort hoffentlich etwas für deinen Daten-Import zu finden."
 
 #: wp-admin/export.php:53
 msgid "Once generated, your WXR file can be imported by another WordPress site or by another blogging platform able to access this format."
@@ -14580,7 +14580,7 @@ msgstr "Ein automatisches Update konnte nicht beendet werden – <a href=\"%s\">
 #. translators: %s: WordPress version number, or 'Latest' string.
 #: wp-admin/includes/update.php:375
 msgid "Latest"
-msgstr "Letztes"
+msgstr "Aktuelle"
 
 #. translators: %s: WordPress version number, or 'Latest' string.
 #: wp-admin/includes/update.php:375
