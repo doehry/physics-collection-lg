@@ -46,7 +46,7 @@ add_action( 'login_head',
  * Date format function for use in pods magic tags
  */
 function my_date( $input_date ) {
-	return date( get_option( 'date_format' ), strtotime( $input_date ) );
+	return date( 'd.m.Y', strtotime( $input_date ) );
 }
 
 /**
