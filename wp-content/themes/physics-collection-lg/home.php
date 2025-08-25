@@ -58,6 +58,9 @@ $params['orderby'] = ( empty( $order_by ) ? 'post_title ASC' : $options_order_by
 if ( ! empty( $filter_cat ) ) {
 	$params['where'] = "category.slug = '" . $filter_cat . "'";
 }
+if ( ! empty( $filter_tag ) ) {
+	$params['where'] = "post_tag.slug = '" . $filter_tag . "'";
+}
 if ( ! empty( $filter_search ) ) {
 	$params['where'] = "post_title LIKE '%" . $filter_search ."%' "
 		. "OR post_content LIKE '%" . $filter_search ."%' "
