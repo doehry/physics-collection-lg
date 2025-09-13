@@ -31,6 +31,7 @@ function activate_plugin() {
         'read' => true,
         'publish_posts' => true,
         'edit_posts' => true,
+        'edit_others_posts' => true,
         'edit_published_posts' => true,
         'delete_posts' => true,
         'delete_published_posts' => true,
@@ -52,7 +53,6 @@ function activate_plugin() {
 
     $assistant_caps = $teacher_caps + $admin_caps + [
         'read_private_posts' => true,
-        'edit_others_posts' => true,
         'edit_private_posts' => true,
         'delete_others_posts' => true,
         'delete_private_posts' => true,
