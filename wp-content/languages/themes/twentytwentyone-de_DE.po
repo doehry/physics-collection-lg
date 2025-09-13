@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Twenty Twenty-One package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-08-13 13:30:56+0000\n"
+"PO-Revision-Date: 2025-08-30 13:47:21+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -345,7 +345,7 @@ msgstr "Eine Kurzfassung"
 
 #: classes/class-twenty-twenty-one-customize.php:85
 msgid "Excerpt Settings"
-msgstr "Textauszugs-Einstellungen"
+msgstr "Einstellungen des Textauszugs"
 
 #: inc/block-styles.php:98
 msgid "Thick"
