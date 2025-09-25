@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Pods &#8211; Custom Content Types and Fields - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-07-22 08:24:40+0000\n"
+"PO-Revision-Date: 2025-09-24 14:56:53+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -915,7 +915,7 @@ msgstr "Alle gesammelten Informationen werden nicht an Dritte weitergegeben und 
 msgid "Review Access Rights"
 msgstr "Zugriffsrechte überprüfen"
 
-#: classes/Pods.php:3980
+#: classes/Pods.php:3984
 msgid "You do not have access to this embedded form."
 msgstr "Du hast keinen Zugriff auf dieses eingebettete Formular."
 
@@ -1303,7 +1303,7 @@ msgstr "Angepasst"
 msgid "Learn more"
 msgstr "Mehr erfahren"
 
-#: ui/admin/settings-reset.php:160
+#: ui/admin/settings-reset.php:166
 msgid "Delete Pod Content"
 msgstr "Pod-Inhalte löschen"
 
@@ -1320,12 +1320,12 @@ msgstr "Lösche alle Felder für Pod"
 msgid "Delete all groups for pod"
 msgstr "Lösche alle Gruppen für Pod"
 
-#: ui/admin/settings-reset.php:162 ui/admin/settings-tools.php:155
+#: ui/admin/settings-reset.php:168 ui/admin/settings-tools.php:155
 #: ui/admin/settings-tools.php:181
 msgid "Preview (no changes will be made)"
 msgstr "Vorschau (es werden keine Änderungen vorgenommen)"
 
-#: ui/admin/settings-reset.php:157
+#: ui/admin/settings-reset.php:163
 msgid "We will delete ALL of the content for the Pod you selected."
 msgstr "Wir werden ALLE Inhalte für den von dir ausgewählten Pod löschen."
 
@@ -1554,7 +1554,7 @@ msgstr "Alle Gruppen mit kollidierenden Namen werden umbenannt, um Konflikte mit
 msgid "Repair Pod, Groups, and Fields"
 msgstr "Pods, Gruppen und Felder reparieren"
 
-#: ui/admin/settings-reset.php:210
+#: ui/admin/settings-reset.php:216
 msgid "Reset Pods entirely"
 msgstr "Pods vollständig zurücksetzen"
 
@@ -1567,7 +1567,7 @@ msgstr "Einzelnes Pod-Element - Felder auflisten"
 msgid "We will be making a few repairs to your configuration that should not be destructive to your data but you should be always have a backup just in case."
 msgstr "Wir werden einige Reparaturen an deiner Konfiguration vor. Diese sollten deine Daten nicht zerstören, trotzdem solltest du für alle Fälle immer ein Backup haben."
 
-#: ui/admin/settings-reset.php:156 ui/admin/settings-tools.php:149
+#: ui/admin/settings-reset.php:162 ui/admin/settings-tools.php:149
 #: ui/admin/settings-tools.php:174
 msgid "This is a good time to make sure you have a backup."
 msgstr "Dies ist ein guter Zeitpunkt, um sicherzustellen, dass du ein Backup hast."
@@ -1588,15 +1588,15 @@ msgstr "Dieses Tool versucht, einen Pod, Gruppen und Felder zu reparieren. Wenn 
 msgid "You can clear all of the transients and object caches that are used by Pods and your site."
 msgstr "Du kannst alle Transienten und Objekt-Caches löschen, die von Pods und deiner Website verwendet werden."
 
-#: ui/admin/settings-reset.php:165
+#: ui/admin/settings-reset.php:171
 msgid "No Pods available to reset."
 msgstr "Keine Pods zum Zurücksetzen verfügbar."
 
-#: ui/admin/settings-reset.php:104
+#: ui/admin/settings-reset.php:110
 msgid "All custom fields for the items stored will be deleted from the database"
 msgstr "Alle individuellen Felder für die gespeicherten Elemente werden aus der Datenbank entfernt"
 
-#: ui/admin/settings-reset.php:105
+#: ui/admin/settings-reset.php:111
 msgid "All files and relationships for the items stored will be deleted from the database"
 msgstr "Alle Dateien und Beziehungen für die gespeicherten Elemente werden aus der Datenbank entfernt"
 
@@ -1691,27 +1691,27 @@ msgstr "Dupliziertes Feld konnte nicht geladen und aufgelöst werden."
 msgid "Failed to load duplicate group to resolve."
 msgstr "Duplizierte Gruppe konnte nicht geladen und aufgelöst werden."
 
-#: ui/admin/settings-reset.php:103
+#: ui/admin/settings-reset.php:109
 msgid "All items for this Pod stored will be deleted from the database"
 msgstr "Alle Elemente für diesen gespeicherten Pod werden aus der Datenbank gelöscht"
 
-#: ui/admin/settings-reset.php:102
+#: ui/admin/settings-reset.php:108
 msgid "Previously uploaded media will remain in the Media Library but will no longer be attached to their corresponding posts"
 msgstr "Zuvor hochgeladene Medien bleiben in der Mediathek, sind aber nicht länger an ihre entsprechenden Beiträge angehängt"
 
-#: ui/admin/settings-reset.php:101
+#: ui/admin/settings-reset.php:107
 msgid "Your Field configurations will remain"
 msgstr "Deine Feld-Konfigurationen bleiben erhalten"
 
-#: ui/admin/settings-reset.php:100
+#: ui/admin/settings-reset.php:106
 msgid "Your Group configurations will remain"
 msgstr "Deine Gruppen-Konfigurationen bleiben erhalten"
 
-#: ui/admin/settings-reset.php:99
+#: ui/admin/settings-reset.php:105
 msgid "Your Pod configuration will remain"
 msgstr "Deine Pod-Konfiguration bleibt erhalten"
 
-#: ui/admin/settings-reset.php:92
+#: ui/admin/settings-reset.php:98
 msgid "Delete all content for a Pod"
 msgstr "Lösche alle Inhalte für einen Pod"
 
@@ -1763,7 +1763,7 @@ msgstr "Diese Option wird standardmäßig auf „, “ gesetzt"
 msgid "Setup group if there were no groups"
 msgstr "Einrichten einer Gruppe, wenn keine Gruppen vorhanden sind"
 
-#: ui/admin/settings-reset.php:94
+#: ui/admin/settings-reset.php:100
 msgid "This will delete ALL stored content in the database for your Pod."
 msgstr "Dies wird ALLE gespeicherten Inhalte für deinen Pod aus der Datenbank entfernen."
 
@@ -2358,7 +2358,7 @@ msgstr "Pods-Einstellungen"
 msgid "Pods Components"
 msgstr "Pods-Komponenten"
 
-#: ui/admin/settings-reset.php:155 ui/admin/settings-tools.php:148
+#: ui/admin/settings-reset.php:161 ui/admin/settings-tools.php:148
 #: ui/admin/settings-tools.php:173 ui/admin/settings-tools.php:206
 msgid "Are you sure you want to do this?"
 msgstr "Bist du dir sicher, dass du das tun möchtest?"
@@ -2393,7 +2393,7 @@ msgstr "Hilfe für Pods erhalten"
 msgid "\"%s\" is not a valid field"
 msgstr "„%s“ ist kein gültiges Feld"
 
-#: classes/Pods.php:3453 classes/Pods.php:3894 classes/PodsField.php:352
+#: classes/Pods.php:3457 classes/Pods.php:3898 classes/PodsField.php:352
 msgid "This is a placeholder. Filters and form fields are not included in block previews."
 msgstr "Dies ist ein Platzhalter. Filter und Formularfelder sind nicht in der Block-Vorschau enthalten."
 
@@ -2697,53 +2697,53 @@ msgstr "Übermittlung …"
 msgid "Save Settings"
 msgstr "Einstellungen speichern"
 
-#: ui/admin/settings-reset.php:247
+#: ui/admin/settings-reset.php:253
 msgid "DEACTIVATE"
 msgstr "DEAKTIVIEREN"
 
-#: ui/admin/settings-reset.php:103 ui/admin/settings-reset.php:104
-#: ui/admin/settings-reset.php:105 ui/admin/settings-reset.php:221
-#: ui/admin/settings-reset.php:222 ui/admin/settings-reset.php:223
-#: ui/admin/settings-reset.php:227 ui/admin/settings-reset.php:248
-#: ui/admin/settings-reset.php:249 ui/admin/settings-reset.php:250
-#: ui/admin/settings-reset.php:254
+#: ui/admin/settings-reset.php:109 ui/admin/settings-reset.php:110
+#: ui/admin/settings-reset.php:111 ui/admin/settings-reset.php:227
+#: ui/admin/settings-reset.php:228 ui/admin/settings-reset.php:229
+#: ui/admin/settings-reset.php:233 ui/admin/settings-reset.php:254
+#: ui/admin/settings-reset.php:255 ui/admin/settings-reset.php:256
+#: ui/admin/settings-reset.php:260
 msgid "DELETE"
 msgstr "LÖSCHEN"
 
-#: ui/admin/settings-reset.php:247
+#: ui/admin/settings-reset.php:253
 msgid "Pods plugin will be deactivated"
 msgstr "Pods-Plugin wird deaktiviert"
 
-#: ui/admin/settings-reset.php:99 ui/admin/settings-reset.php:100
-#: ui/admin/settings-reset.php:101 ui/admin/settings-reset.php:102
-#: ui/admin/settings-reset.php:215 ui/admin/settings-reset.php:216
-#: ui/admin/settings-reset.php:217 ui/admin/settings-reset.php:218
-#: ui/admin/settings-reset.php:219 ui/admin/settings-reset.php:220
-#: ui/admin/settings-reset.php:242 ui/admin/settings-reset.php:243
-#: ui/admin/settings-reset.php:244 ui/admin/settings-reset.php:245
-#: ui/admin/settings-reset.php:246 ui/admin/settings-tools.php:195
+#: ui/admin/settings-reset.php:105 ui/admin/settings-reset.php:106
+#: ui/admin/settings-reset.php:107 ui/admin/settings-reset.php:108
+#: ui/admin/settings-reset.php:221 ui/admin/settings-reset.php:222
+#: ui/admin/settings-reset.php:223 ui/admin/settings-reset.php:224
+#: ui/admin/settings-reset.php:225 ui/admin/settings-reset.php:226
+#: ui/admin/settings-reset.php:248 ui/admin/settings-reset.php:249
+#: ui/admin/settings-reset.php:250 ui/admin/settings-reset.php:251
+#: ui/admin/settings-reset.php:252 ui/admin/settings-tools.php:195
 msgid "KEEP"
 msgstr "BEHALTEN"
 
-#: ui/admin/settings-reset.php:96 ui/admin/settings-reset.php:213
-#: ui/admin/settings-reset.php:240 ui/admin/settings-tools.php:89
+#: ui/admin/settings-reset.php:102 ui/admin/settings-reset.php:219
+#: ui/admin/settings-reset.php:246 ui/admin/settings-tools.php:89
 #: ui/admin/settings-tools.php:166 ui/admin/settings-tools.php:193
 msgid "What you can expect"
 msgstr "Was du erwarten kannst"
 
-#: ui/admin/settings-reset.php:218 ui/admin/settings-reset.php:245
+#: ui/admin/settings-reset.php:224 ui/admin/settings-reset.php:251
 msgid "All users will remain"
 msgstr "Alle Benutzer bleiben erhalten"
 
-#: ui/admin/settings-reset.php:217 ui/admin/settings-reset.php:244
+#: ui/admin/settings-reset.php:223 ui/admin/settings-reset.php:250
 msgid "All media will remain"
 msgstr "Alle Medien bleiben erhalten"
 
-#: ui/admin/settings-reset.php:216 ui/admin/settings-reset.php:243
+#: ui/admin/settings-reset.php:222 ui/admin/settings-reset.php:249
 msgid "All terms will remain"
 msgstr "Alle Begriffe bleiben erhalten"
 
-#: ui/admin/settings-reset.php:215 ui/admin/settings-reset.php:242
+#: ui/admin/settings-reset.php:221 ui/admin/settings-reset.php:248
 msgid "All posts will remain"
 msgstr "Alle Beiträge bleiben erhalten"
 
@@ -2751,28 +2751,28 @@ msgstr "Alle Beiträge bleiben erhalten"
 msgid "Pods transients and cache have been cleared."
 msgstr "Die Pods Transients und der Cache wurden gelöscht."
 
-#: ui/admin/settings-reset.php:239
+#: ui/admin/settings-reset.php:245
 msgid "This will delete Pods settings, data, and deactivate itself once done."
 msgstr "Dadurch werden die Pods-Einstellungen gelöscht und Pods deaktiviert."
 
-#: ui/admin/settings-reset.php:227 ui/admin/settings-reset.php:254
+#: ui/admin/settings-reset.php:233 ui/admin/settings-reset.php:260
 msgid "Advanced Content Type tables will be deleted (and all of their data)"
 msgstr "Tabellen der Advanced Content Types werden gelöscht (und alle Daten)"
 
-#: ui/admin/settings-reset.php:221 ui/admin/settings-reset.php:248
+#: ui/admin/settings-reset.php:227 ui/admin/settings-reset.php:254
 msgid "Pods settings will be reset to defaults"
 msgstr "Pods-Einstellungen werden auf Standardwerte zurückgesetzt"
 
 #. translators: %s is the name of the wp_podsrel table in the database.
-#: ui/admin/settings-reset.php:225 ui/admin/settings-reset.php:252
+#: ui/admin/settings-reset.php:231 ui/admin/settings-reset.php:258
 msgid "Relationship table (%s) will be deleted (and all of the relationships)"
 msgstr "Relationship-Tabelle (%s) wird entfernt (und alle Beziehungen)"
 
-#: ui/admin/settings-reset.php:212
+#: ui/admin/settings-reset.php:218
 msgid "This will reset Pods settings, remove all of your Pod configurations, and perform a fresh install."
 msgstr "Dies setzt die Pod-Einstellungen zurück, entfernt all deine Pod-Konfigurationen und macht eine Neuinstallation."
 
-#: ui/admin/settings-reset.php:222 ui/admin/settings-reset.php:249
+#: ui/admin/settings-reset.php:228 ui/admin/settings-reset.php:255
 msgid "All Pod configurations will be deleted including Custom Post Types, Custom Taxonomies, Custom Settings Pages, and all custom field configurations"
 msgstr "Löscht alle Pod-Konfigurationen einschließlich individueller Beitragsarten, individueller Taxonomien, individueller Einstellungsseiten sowie aller individuellen Feldkonfigurationen"
 
@@ -2792,11 +2792,11 @@ msgstr "Individuelle Felder zu Seiten hinzufügen"
 msgid "Add custom fields to Posts"
 msgstr "Individuelle Felder zu Beiträgen hinzufügen"
 
-#: ui/admin/settings-reset.php:220
+#: ui/admin/settings-reset.php:226
 msgid "Pods plugin will remain activated"
 msgstr "Das Pods-Plugin bleibt aktiviert"
 
-#: ui/admin/settings-reset.php:219 ui/admin/settings-reset.php:246
+#: ui/admin/settings-reset.php:225 ui/admin/settings-reset.php:252
 msgid "All custom field values will remain"
 msgstr "Alle Werte der individuellen Felder bleiben erhalten"
 
@@ -3991,7 +3991,7 @@ msgstr "Zahlenformat"
 msgid "Number"
 msgstr "Zahl"
 
-#: classes/fields/currency.php:159 classes/fields/number.php:110
+#: classes/fields/currency.php:163 classes/fields/number.php:126
 msgid "Maximum Digits"
 msgstr "Maximale Ziffern"
 
@@ -4011,7 +4011,7 @@ msgstr "https://example.com"
 msgid "https://www.example.com/ (force www if no sub-domain provided)"
 msgstr "https://www.example.com/ (www erzwingen, wenn keine Subdomain angegeben ist)"
 
-#: classes/Pods.php:3905 classes/Pods.php:3919 classes/Pods.php:3928
+#: classes/Pods.php:3909 classes/Pods.php:3923 classes/Pods.php:3932
 #: ui/forms/form.php:128
 msgid "Error"
 msgstr "Fehler"
@@ -4147,11 +4147,11 @@ msgstr "Du hast bisher noch keinen Pod eingerichtet. Du kannst deinen allererste
 msgid "This Pod does not have any fields defined."
 msgstr "Für diesen Pod sind (noch) keine Felder definiert."
 
-#: classes/Pods.php:3929
+#: classes/Pods.php:3933
 msgid "Anonymous form submissions are not compatible with sessions on this site."
 msgstr "Anonyme Formularübermittlungen sind nicht mit Sitzungen auf dieser Website kompatibel."
 
-#: classes/Pods.php:3920
+#: classes/Pods.php:3924
 msgid "Please refresh the page to access this form."
 msgstr "Bitte aktualisiere die Seite, um auf dieses Formular zuzugreifen."
 
@@ -4163,10 +4163,6 @@ msgstr "HTML-Inhalt"
 msgid "Multi Select (basic selection)"
 msgstr "Mehrfachauswahl (Basisauswahl)"
 
-#: classes/fields/number.php:79
-msgid "Soft Formatting"
-msgstr "Sanfte Formatierung"
-
 #: classes/fields/html.php:51
 msgid "By disabling the form label, the HTML will show as full width without the label text. Only the HTML content will be displayed in the form."
 msgstr "Wenn die Formularbeschriftung deaktiviert wird, wird der HTML-Code in voller Breite und ohne den Beschriftungstext angezeigt. Nur der HTML-Inhalt wird im Formular angezeigt."
@@ -4175,7 +4171,7 @@ msgstr "Wenn die Formularbeschriftung deaktiviert wird, wird der HTML-Code in vo
 msgid "Leave this empty to use the default heading tag for the form context the heading appears in."
 msgstr "Lasse dieses Feld leer, um den Standard-Überschrifts-Tag für den Formularkontext zu verwenden, in dem die Überschrift erscheint."
 
-#: classes/fields/currency.php:162 classes/fields/number.php:113
+#: classes/fields/currency.php:166 classes/fields/number.php:129
 msgid "Set to -1 for no limit. The upper limit in the database for this field is 64 digits."
 msgstr "Für keine Begrenzung auf -1 setzen. Die Obergrenze in der Datenbank für dieses Feld beträgt 64 Ziffern."
 
@@ -4259,7 +4255,7 @@ msgstr "Pods-Beziehungs-Tabelle aktiviert"
 msgid "Trim extra whitespace before/after contents"
 msgstr "Überflüssige Leerzeichen vor/nach dem Inhalt wegkürzen"
 
-#: classes/Pods.php:3908
+#: classes/Pods.php:3912
 msgid "try logging in first"
 msgstr "versuche zuerst, dich anzumelden"
 
@@ -4271,7 +4267,7 @@ msgstr "Pod-Bezeichnung ist erforderlich"
 msgid "Group %1$s already exists, you cannot rename %2$s to that"
 msgstr "Gruppe %1$s existiert bereits, du kannst %2$s daher nicht so benennen"
 
-#: classes/Pods.php:3906
+#: classes/Pods.php:3910
 msgid "Anonymous form submissions are not enabled for this site"
 msgstr "Anonyme Formularübermittlungen sind für diese Website nicht aktiviert"
 
@@ -4312,7 +4308,7 @@ msgstr "Listen-Vorschau (mit Neusortierung)"
 msgid "This is the heading HTML tag to use for the heading text. Example \"h2\" will output your heading as <code>&lt;h2&gt;Heading Text&lt;/h2&gt;</code>"
 msgstr "Dies ist der HTML-Tag, der für den Überschriftstext verwendet wird. „h2” gibt deine Überschrift wie folgt aus: <code>&lt;h2&gt;Überschriftstext&lt;/h2&gt;</code>"
 
-#: classes/Pods.php:3909
+#: classes/Pods.php:3913
 msgid "or contacting your site administrator"
 msgstr "oder kontaktiere deinen Website-Administrator"
 
@@ -4527,14 +4523,6 @@ msgstr "Bitte gib einen Namen für den Pod an."
 msgid "Please provide either a template or field name."
 msgstr "Bitte gib entweder einen Template- oder Feldnamen an."
 
-#: ui/admin/callouts/friends_2024_docs.php:111 ui/admin/help.php:73
-#: ui/admin/help.php:111 ui/admin/help.php:140 ui/admin/help.php:169
-#: ui/admin/help.php:198 ui/admin/help.php:222 ui/admin/help.php:255
-#: ui/admin/help.php:284 ui/admin/help.php:319 ui/admin/help.php:338
-#: ui/admin/help.php:357 ui/admin/help.php:376 ui/admin/help.php:395
-msgid "Learn More"
-msgstr "Mehr erfahren"
-
 #: classes/fields/file.php:876
 msgid "Full Size"
 msgstr "Originalgröße"
@@ -4562,6 +4550,14 @@ msgstr "Wird als Format für die Frontend-Anzeige verwendet"
 #: classes/fields/pick.php:271
 msgid "Used as separator for front-end display. This also turns off the \"and\" portion of the formatting."
 msgstr "Wird als Trennzeichen für die Frontend-Anzeige verwendet. Dadurch wird auch der „und”-Teil der Formatierung ausgeschaltet."
+
+#: ui/admin/callouts/friends_2024_docs.php:111 ui/admin/help.php:73
+#: ui/admin/help.php:111 ui/admin/help.php:140 ui/admin/help.php:169
+#: ui/admin/help.php:198 ui/admin/help.php:222 ui/admin/help.php:255
+#: ui/admin/help.php:284 ui/admin/help.php:319 ui/admin/help.php:338
+#: ui/admin/help.php:357 ui/admin/help.php:376 ui/admin/help.php:395
+msgid "Learn More"
+msgstr "Weitere Informationen"
 
 #: classes/PodsAdmin.php:4780
 msgid "Pods Shortcode Allow Evaluate Tags"
@@ -4626,7 +4622,7 @@ msgstr "Sitzungs-Speicherpfad existiert"
 msgid "Session Save Path"
 msgstr "Sitzungs-Speicherpfad"
 
-#: classes/fields/currency.php:472
+#: classes/fields/currency.php:444
 msgid "Nigerian Naira"
 msgstr "Nigerianische Naira"
 
@@ -4710,7 +4706,7 @@ msgstr "Dein Benutzer-Agent"
 msgid "Pods Strict Activated"
 msgstr "Pods-Strict aktiviert"
 
-#: classes/fields/currency.php:556
+#: classes/fields/currency.php:528
 msgid "US Dollar Cent"
 msgstr "US Dollar Cent"
 
@@ -4718,15 +4714,15 @@ msgstr "US Dollar Cent"
 msgid "%s updated"
 msgstr "%s aktualisiert"
 
-#: classes/fields/currency.php:436
+#: classes/fields/currency.php:408
 msgid "Indonesian Rupiah"
 msgstr "Indonesische Rupien"
 
-#: classes/fields/currency.php:388
+#: classes/fields/currency.php:360
 msgid "Chinese Yen (¥)"
 msgstr "Chinesischer Yen (¥)"
 
-#: classes/fields/currency.php:394
+#: classes/fields/currency.php:366
 msgid "Chinese Yuan (元)"
 msgstr "Chinesischer Yuan (元)"
 
@@ -5298,8 +5294,8 @@ msgstr "Hinzugefügt! Wähle weitere oder <a href=\"#\">schließe diese Box</a>"
 msgid "Version %s"
 msgstr "Version %s"
 
-#: classes/fields/currency.php:170 classes/fields/email.php:55
-#: classes/fields/number.php:122 classes/fields/paragraph.php:145
+#: classes/fields/currency.php:174 classes/fields/email.php:55
+#: classes/fields/number.php:138 classes/fields/paragraph.php:145
 #: classes/fields/password.php:49 classes/fields/phone.php:83
 #: classes/fields/slug.php:46 classes/fields/text.php:100
 #: classes/fields/website.php:96
@@ -5470,8 +5466,8 @@ msgstr "Dokumentation zum jQuery UI Datepicker"
 msgid "Admin bar name"
 msgstr "Adminleisten-Bezeichnung"
 
-#: classes/fields/currency.php:174 classes/fields/email.php:59
-#: classes/fields/number.php:126 classes/fields/paragraph.php:149
+#: classes/fields/currency.php:178 classes/fields/email.php:59
+#: classes/fields/number.php:142 classes/fields/paragraph.php:149
 #: classes/fields/password.php:53 classes/fields/phone.php:87
 #: classes/fields/slug.php:50 classes/fields/text.php:104
 #: classes/fields/website.php:100
@@ -5511,10 +5507,6 @@ msgstr "Wenn du diese Seite verlässt, gehen alle Änderungen, die du vorgenomme
 msgid "Error uploading file: "
 msgstr "Fehler beim Hochladen der Datei: "
 
-#: classes/PodsI18n.php:149
-msgid "Add"
-msgstr "Erstellen"
-
 #: classes/PodsI18n.php:153
 msgid "Add New Record"
 msgstr "Neuen Datensatz erstellen"
@@ -5540,6 +5532,10 @@ msgstr "Individuelle Einstellungen ermöglichen dir, deine eigenen Datums-/Zeit-
 msgid "Allow in quick/bulk edit panel"
 msgstr "Schnell-/Massen-Bearbeitungsfeld zulassen"
 
+#: classes/PodsI18n.php:149
+msgid "Add"
+msgstr "Hinzufügen"
+
 #: classes/PodsUI.php:4714
 msgid "%s per page"
 msgstr "%s pro Seite"
@@ -5548,39 +5544,39 @@ msgstr "%s pro Seite"
 msgid "Remove trailing decimals (0)"
 msgstr "Führende Nullen entfernen"
 
-#: classes/fields/currency.php:532
+#: classes/fields/currency.php:504
 msgid "Taiwan New Dollar"
 msgstr "Neuer Taiwan Dollar"
 
-#: classes/fields/currency.php:490
+#: classes/fields/currency.php:462
 msgid "Philippine Peso"
 msgstr "Philippinischer Peso"
 
-#: classes/fields/currency.php:466
+#: classes/fields/currency.php:438
 msgid "Mexican Peso"
 msgstr "Mexikanischer Peso"
 
-#: classes/fields/currency.php:418
+#: classes/fields/currency.php:390
 msgid "Hong Kong Dollar"
 msgstr "Hongkong-Dollar"
 
-#: classes/fields/currency.php:400
+#: classes/fields/currency.php:372
 msgid "Czech Koruna"
 msgstr "Tschechische Krone"
 
-#: classes/fields/currency.php:370
+#: classes/fields/currency.php:342
 msgid "Brazilian Real"
 msgstr "Brasilianischer Real"
 
-#: classes/fields/currency.php:424
+#: classes/fields/currency.php:396
 msgid "Hungarian Forint"
 msgstr "Ungarischer Forint"
 
-#: classes/fields/currency.php:442
+#: classes/fields/currency.php:414
 msgid "Israeli New Sheqel"
 msgstr "Neuer Israelischer Schekel"
 
-#: classes/fields/currency.php:496
+#: classes/fields/currency.php:468
 msgid "Polish Złoty"
 msgstr "Polnischer Złoty"
 
@@ -5612,23 +5608,23 @@ msgstr "Passwort"
 msgid "Media File"
 msgstr "Mediendatei"
 
-#: classes/fields/currency.php:550
+#: classes/fields/currency.php:522
 msgid "US Dollar"
 msgstr "US-Dollar"
 
-#: classes/fields/currency.php:382
+#: classes/fields/currency.php:354
 msgid "Canadian Dollar"
 msgstr "Kanadischer Dollar"
 
-#: classes/fields/currency.php:376
+#: classes/fields/currency.php:348
 msgid "British Pound"
 msgstr "Britisches Pfund"
 
-#: classes/fields/currency.php:412
+#: classes/fields/currency.php:384
 msgid "Euro"
 msgstr "Euro"
 
-#: classes/fields/currency.php:526
+#: classes/fields/currency.php:498
 msgid "Swiss Franc"
 msgstr "Schweizer Franken"
 
@@ -5640,7 +5636,7 @@ msgstr "Währung"
 msgid "Date"
 msgstr "Datum"
 
-#: classes/fields/currency.php:544
+#: classes/fields/currency.php:516
 msgid "Turkish Lira"
 msgstr "Türkische Lira"
 
@@ -5652,7 +5648,7 @@ msgstr "Ja / Nein"
 msgid "Phone"
 msgstr "Telefon"
 
-#: classes/fields/currency.php:514
+#: classes/fields/currency.php:486
 msgid "Singapore Dollar"
 msgstr "Singapur-Dollar"
 
@@ -5667,10 +5663,6 @@ msgstr "Avatar"
 #: classes/fields/email.php:34
 msgid "E-mail"
 msgstr "E-Mail"
-
-#: classes/fields/currency.php:128
-msgid "Remove decimals"
-msgstr "Dezimalstellen entfernen"
 
 #: classes/fields/color.php:28
 msgid "Color Picker"
@@ -5688,61 +5680,57 @@ msgstr "Beziehung"
 msgid "Output as a WP Gallery"
 msgstr "Als WP Galerie ausgeben"
 
-#: classes/fields/currency.php:460
+#: classes/fields/currency.php:432
 msgid "Malaysian Ringgit"
 msgstr "Malaysischer Ringgit"
 
-#: classes/fields/currency.php:538
+#: classes/fields/currency.php:510
 msgid "Thai Baht"
 msgstr "Thailändischer Baht"
 
-#: classes/fields/currency.php:454
+#: classes/fields/currency.php:426
 msgid "Korean Won"
 msgstr "Koreanischer Won"
 
-#: classes/fields/currency.php:448
+#: classes/fields/currency.php:420
 msgid "Japanese Yen"
 msgstr "Japanischer Yen"
 
-#: classes/fields/currency.php:430
+#: classes/fields/currency.php:402
 msgid "Indian Rupee"
 msgstr "Indische Rupie"
 
-#: classes/fields/currency.php:520
+#: classes/fields/currency.php:492
 msgid "South African Rand"
 msgstr "Südafrikanischer Rand"
 
-#: classes/fields/currency.php:508
+#: classes/fields/currency.php:480
 msgid "Swedish Krona"
 msgstr "Schwedische Krone"
 
-#: classes/fields/currency.php:484
+#: classes/fields/currency.php:456
 msgid "Norwegian Krone"
 msgstr "Norwegische Krone"
 
-#: classes/fields/currency.php:406
+#: classes/fields/currency.php:378
 msgid "Danish Krone"
 msgstr "Dänische Krone"
 
-#: classes/fields/currency.php:502
+#: classes/fields/currency.php:474
 msgid "Russian Ruble"
 msgstr "Russischer Rubel"
 
-#: classes/fields/currency.php:478
+#: classes/fields/currency.php:450
 msgid "New Zealand Dollar"
 msgstr "Neuseeland-Dollar"
 
-#: classes/fields/currency.php:364
+#: classes/fields/currency.php:336
 msgid "Australian Dollar"
 msgstr "Australischer Dollar"
 
 #: classes/fields/code.php:36
 msgid "Code (Syntax Highlighting)"
 msgstr "Code (Syntaxhervorhebung)"
-
-#: classes/fields/currency.php:129
-msgid "Convert to dash"
-msgstr "In Gedankenstrich umwandeln"
 
 #: classes/fields/file.php:316
 msgid "Gallery Image Size"
@@ -5768,7 +5756,7 @@ msgstr "Ob ein Standard-UI zum Verwalten dieses Inhaltstyps im Adminbereich ange
 msgid "Whether to generate a default UI for managing this taxonomy."
 msgstr "Ob ein Standard-UI zum Verwalten dieser Taxonomie angelegt werden soll."
 
-#: classes/fields/currency.php:562
+#: classes/fields/currency.php:534
 msgid "Vietnamese Dong"
 msgstr "Vietnamesischer Đồng"
 
@@ -5779,10 +5767,6 @@ msgstr "Einfache Zahl"
 #: classes/fields/file.php:286
 msgid "None"
 msgstr "Keine"
-
-#: classes/fields/currency.php:123
-msgid "Decimal handling when zero"
-msgstr "Dezimalstellen-Behandlung wenn Null"
 
 #: classes/fields/file.php:292
 msgid "Gallery Image Columns"
@@ -5825,7 +5809,7 @@ msgstr "Aktiviert zusätzliche Berechtigungen für diese Taxonomie, einschließl
 msgid "Uses WordPress term capabilities by default"
 msgstr "Verwendet standardmäßig die WordPress-Begriffs-Berechtigungen"
 
-#: classes/PodsMeta.php:1329
+#: classes/PodsMeta.php:1334
 msgid "There are no fields to display"
 msgstr "Es gibt keine Felder, die angezeigt werden können"
 
@@ -5963,8 +5947,8 @@ msgstr "1.x Aktualisierungen"
 msgid "Title"
 msgstr "Titel"
 
-#: classes/fields/currency.php:127 components/I18n/I18n.php:822
-#: src/Pods/Admin/Config/Group.php:230 ui/fields/color.php:20
+#: components/I18n/I18n.php:822 src/Pods/Admin/Config/Group.php:230
+#: ui/fields/color.php:20
 msgid "Default"
 msgstr "Standard"
 
@@ -6473,7 +6457,7 @@ msgstr "Einstellungen erfolgreich gespeichert."
 msgid "Pods Help"
 msgstr "Pods Hilfe"
 
-#: ui/admin/settings-reset.php:88
+#: ui/admin/settings-reset.php:94
 msgid "Please Note:"
 msgstr "Hinweis:"
 
@@ -6491,7 +6475,7 @@ msgstr "Weiter"
 msgid "Page Title"
 msgstr "Seitentitel"
 
-#: ui/admin/settings-reset.php:268
+#: ui/admin/settings-reset.php:274
 msgid "Reset Weekend"
 msgstr "Wochenende zurücksetzen"
 
@@ -6559,11 +6543,11 @@ msgstr "Die Benutzer sehen dies als den Namen ihrer Rolle"
 msgid "Back to Manage"
 msgstr "Zurück zur Verwaltung"
 
-#: ui/admin/settings-reset.php:237 ui/admin/settings-reset.php:259
+#: ui/admin/settings-reset.php:243 ui/admin/settings-reset.php:265
 msgid "Deactivate and Delete Pods data"
 msgstr "Deaktivieren und Löschen von Pods-Daten"
 
-#: ui/admin/settings-reset.php:232
+#: ui/admin/settings-reset.php:238
 msgid "Reset Pods settings and data"
 msgstr "Pod-Einstellungen und -Daten zurücksetzen"
 
@@ -6710,7 +6694,7 @@ msgstr "Zu einer individuellen URL umleiten"
 msgid "Enable Automatic Pod Templates for this Pod"
 msgstr "Automatische Pod-Templates für diesen Pod aktivieren"
 
-#: ui/admin/settings-reset.php:188
+#: ui/admin/settings-reset.php:194
 msgid "This does not delete any Pods 1.x data, it simply resets the Pods 2.x settings, removes all of it's data, and performs a fresh install."
 msgstr "Dabei werden keine Daten von Pods 1.x gelöscht, sondern lediglich die Einstellungen von Pods 2.x zurückgesetzt, alle Daten entfernt und eine Neuinstallation durchgeführt."
 
@@ -6718,15 +6702,15 @@ msgstr "Dabei werden keine Daten von Pods 1.x gelöscht, sondern lediglich die 
 msgid "Page (WP Default)"
 msgstr "Seite (WordPress-Standard)"
 
-#: ui/admin/settings-reset.php:193
+#: ui/admin/settings-reset.php:199
 msgid "Reset Pods 2.x settings and data"
 msgstr "Pods 2.x Einstellungen und Daten zurücksetzen"
 
-#: ui/admin/settings-reset.php:198 ui/admin/settings-reset.php:205
+#: ui/admin/settings-reset.php:204 ui/admin/settings-reset.php:211
 msgid "Deactivate and Delete Pods 2.x data"
 msgstr "Deaktivieren und Löschen von Pods 2.x-Daten"
 
-#: ui/admin/settings-reset.php:177
+#: ui/admin/settings-reset.php:183
 msgid "This will delete all of your Pods 1.x data, it's only recommended if you've verified your data has been properly migrated into Pods 2.x."
 msgstr "Dies wird alle Daten von Pods 1.x löschen und wird nur empfohlen, wenn du sichergestellt hast, dass alle Daten erfolgreich zu Pods 2.x mirgriert wurden."
 
@@ -6738,15 +6722,15 @@ msgstr "Bitte aktualisiere deine MySQL-Version (oder lasse sie von deinem Hostin
 msgid "Please upgrade (or have your Hosting Provider upgrade it for you) your PHP version to continue."
 msgstr "Bitte aktualisiere deine PHP-Version (oder lasse sie von deinem Hosting-Anbieter aktualisieren), um fortzufahren."
 
-#: ui/admin/settings-reset.php:186
+#: ui/admin/settings-reset.php:192
 msgid "Reset Pods 2.x"
 msgstr "Pods 2.x zurücksetzen"
 
-#: ui/admin/settings-reset.php:181
+#: ui/admin/settings-reset.php:187
 msgid "Delete Pods 1.x settings and data"
 msgstr "Pods 1.x Einstellungen und Daten löschen"
 
-#: ui/admin/settings-reset.php:175
+#: ui/admin/settings-reset.php:181
 msgid "Delete Pods 1.x data"
 msgstr "Pods 1.x Daten löschen"
 
@@ -6802,7 +6786,7 @@ msgstr "Rollen und Berechtigungen: Neue Rolle hinzufügen"
 msgid "Roles allow you to specify which capabilities a user should be able to do within WordPress."
 msgstr "Mit Rollen kannst du festlegen, welche Berechtigungen ein Benutzer in WordPress hat."
 
-#: ui/admin/settings-reset.php:201
+#: ui/admin/settings-reset.php:207
 msgid "<strong>Please Note:</strong> This does not remove any items from any Post Types, Taxonomies, Media, Users, or Comments data you have added/modified."
 msgstr "<strong>Bitte beachte:</strong> Dadurch werden keine Elemente aus Inhaltstypen, Taxonomien, Medien, Benutzern oder Kommentaren entfernt, die du hinzugefügt/geändert hast."
 
@@ -6824,11 +6808,11 @@ msgstr "Pod <strong>%s</strong> nicht gefunden, Beziehungen können nicht migrie
 msgid "Index (WP Fallback)"
 msgstr "Verzeichnis (WordPress-Fallback)"
 
-#: ui/admin/settings-reset.php:200
+#: ui/admin/settings-reset.php:206
 msgid "This will delete Pods 2.x settings, data, and deactivate itself once done. Your database will be as if Pods 2.x never existed."
 msgstr "Dadurch werden die Einstellungen und Daten von Pods 2.x gelöscht, und das Programm deaktiviert sich anschließend selbst. Deine Datenbank ist dann so, als hätte Pods 2.x nie existiert."
 
-#: ui/admin/settings-reset.php:192
+#: ui/admin/settings-reset.php:198
 msgid ""
 "Are you sure you want to do this?\n"
 "\n"
@@ -6838,7 +6822,7 @@ msgstr ""
 "\n"
 "Dies ist ein guter Zeitpunkt, um sicherzustellen, ob du ein Backup hast. Wir werden alle Daten löschen, die mit 2.x zusammenhängen, und danach gibt es kein Zurück mehr."
 
-#: ui/admin/settings-reset.php:189
+#: ui/admin/settings-reset.php:195
 msgid "This does not remove any items from any Post Types, Taxonomies, Media, Users, or Comments data you have added/modified. Any custom fields stored using the table storage component, content in Advanced Content Types, and relationships between posts will be lost."
 msgstr "Dabei werden keine Elemente aus Inhaltstypen, Taxonomien, Medien, Benutzern oder Kommentar-Daten entfernt, die du hinzugefügt/geändert hast. Alle individuellen Felder, die mit der Tabellenspeicherkomponente gespeichert wurden, Inhalte in erweiterten Inhaltsarten und Beziehungen zwischen Beiträgen gehen verloren."
 
@@ -6875,7 +6859,7 @@ msgstr "Du hast leider keine Berechtigung, um diesen Inhalt anzuzeigen."
 msgid "Redirect to WP Login page"
 msgstr "Zur WordPress-Anmeldungs-Seite weiterleiten"
 
-#: ui/admin/settings-reset.php:204
+#: ui/admin/settings-reset.php:210
 msgid ""
 "Are you sure you want to do this?\n"
 "\n"
@@ -6924,11 +6908,11 @@ msgstr "Tabelle nicht gefunden, sie kann nicht migriert werden"
 msgid "Extend any existing content type within WordPress, including <strong>Post Types</strong> (Posts, Pages, etc), <strong>Taxonomies</strong> (Categories, Tags, etc), <strong>Media</strong>, <strong>Users</strong>, or <strong>Comments</strong>."
 msgstr "Erweitere jede bestehende Inhaltsart in WordPress, einschließlich <strong>Inhaltstypen</strong> (Beiträge, Seiten, etc.), <strong>Taxonomien</strong> (Kategorien, Schlagwörter, etc.), <strong>Medien</strong>, <strong>Benutzern</strong>, oder <strong>Kommentaren</strong>."
 
-#: ui/admin/settings-reset.php:270
+#: ui/admin/settings-reset.php:276
 msgid "This feature has been exclusively built for Pods to help developers suffering from \"Monday\", and allows them to reset the weekend."
 msgstr "Diese Funktion wurde exklusiv für Pods entwickelt, um Entwicklern zu helfen, die unter „Montagen” leiden, und ermöglicht es ihnen auf das Wochenende zurückzusetzen."
 
-#: ui/admin/settings-reset.php:231
+#: ui/admin/settings-reset.php:237
 msgid ""
 "Are you sure you want to do this?\n"
 "\n"
@@ -6942,7 +6926,7 @@ msgstr ""
 "\n"
 "Wir löschen ALLE Daten rund um die Pods und setzen dein Plugin auf eine saubere Erstinstallation zurück."
 
-#: ui/admin/settings-reset.php:274
+#: ui/admin/settings-reset.php:280
 msgid ""
 "Are you sure you want to Reset your Weekend?\n"
 "\n"
@@ -6956,7 +6940,7 @@ msgstr ""
 "\n"
 "Du bist dabei, es zu verlieren"
 
-#: ui/admin/settings-reset.php:180
+#: ui/admin/settings-reset.php:186
 msgid ""
 "Are you sure you want to do this?\n"
 "\n"
@@ -6970,7 +6954,7 @@ msgstr ""
 "\n"
 "Wir löschen ALLE Daten, die mit Version 1.x zusammenhängen, und setzen auf eine saubere Erstinstallation zurück."
 
-#: ui/admin/settings-reset.php:258
+#: ui/admin/settings-reset.php:264
 msgid ""
 "Are you sure you want to do this?\n"
 "\n"
@@ -6984,7 +6968,7 @@ msgstr ""
 "\n"
 "Du löschst ALLE umgebenden Daten, ohne zurückkehren zu können."
 
-#: ui/admin/settings-reset.php:271
+#: ui/admin/settings-reset.php:277
 msgid "By resetting the weekend, you will be sent back to Friday night and the weekend you've just spent will be erased. You will retain all of your memories of the weekend, and be able to relive it in any way you wish."
 msgstr "Wenn du das Wochenende zurücksetzt, wirst du auf Freitagabend zurückversetzt und das Wochenende, das du gerade verbracht hast, wird gelöscht. Du behältst alle deine Erinnerungen an das Wochenende und kannst es auf jede beliebige Weise erneut erleben."
 
@@ -9150,7 +9134,7 @@ msgstr "von"
 msgid "Add File"
 msgstr "Datei hinzufügen"
 
-#: classes/PodsAPI.php:2097 classes/PodsMeta.php:987
+#: classes/PodsAPI.php:2097 classes/PodsMeta.php:988
 #: src/Pods/Tools/Repair.php:452 src/Pods/Whatsit.php:1682
 #: ui/admin/view.php:189
 msgid "More Fields"
@@ -9253,9 +9237,9 @@ msgstr "Pod wurde erfolgreich gelöscht."
 msgid "Allow Shortcodes"
 msgstr "Shortcodes erlauben"
 
-#: classes/fields/currency.php:165 classes/fields/date.php:129
+#: classes/fields/currency.php:169 classes/fields/date.php:129
 #: classes/fields/datetime.php:212 classes/fields/email.php:50
-#: classes/fields/link.php:98 classes/fields/number.php:116
+#: classes/fields/link.php:98 classes/fields/number.php:132
 #: classes/fields/phone.php:78 classes/fields/time.php:135
 #: classes/fields/website.php:90
 msgid "Enable HTML5 Input Field"
@@ -9417,16 +9401,16 @@ msgstr "erstellt"
 msgid "Selection Type"
 msgstr "Art der Auswahl"
 
-#: classes/fields/currency.php:150 classes/fields/number.php:101
+#: classes/fields/currency.php:154 classes/fields/number.php:117
 msgid "Maximum Number"
 msgstr "Maximale Anzahl"
 
-#: classes/fields/currency.php:141 classes/fields/number.php:92
+#: classes/fields/currency.php:145 classes/fields/number.php:108
 msgid "Minimum Number"
 msgstr "Minimale Anzahl"
 
 #. Translators: %s stands for the input value.
-#: classes/fields/number.php:302
+#: classes/fields/number.php:318
 msgid "%s is not numeric"
 msgstr "%s ist nicht numerisch"
 
@@ -9717,12 +9701,6 @@ msgstr "Feldtypen"
 msgid "New %s"
 msgstr "Neuen %s"
 
-#: classes/PodsAdmin.php:1915 classes/PodsI18n.php:169 classes/PodsUI.php:757
-#: classes/PodsUI.php:760 classes/PodsUI.php:4460 includes/access.php:1916
-#: src/Pods/Admin/Config/Pod.php:248 src/Pods/Blocks/Types/View.php:167
-msgid "View"
-msgstr "Vorschau"
-
 #: classes/PodsAdmin.php:283 classes/PodsAdmin.php:310
 #: classes/PodsAdmin.php:311 classes/PodsInit.php:2027
 #: classes/PodsInit.php:2028 classes/PodsInit.php:2068 classes/PodsUI.php:754
@@ -9734,7 +9712,7 @@ msgstr "%s erstellen"
 msgid "You are about to permanently delete this item\\n Choose \\'Cancel\\' to stop, \\'OK\\' to delete."
 msgstr "Du bist dabei, dieses Element unwiderruflich zu löschen. Wähle „Abbrechen”, um den Vorgang zu stoppen oder „OK”, um es zu löschen."
 
-#: classes/fields/currency.php:135 classes/fields/number.php:86
+#: classes/fields/currency.php:139 classes/fields/number.php:102
 msgid "Slider Increment (Step)"
 msgstr "Slider-Schrittweiten (Stufen)"
 
@@ -9770,6 +9748,12 @@ msgstr "j. M Y \\u\\m G:i \\U\\h\\r"
 #: ui/forms/type/post.php:63
 msgid "View %s"
 msgstr "%s anzeigen"
+
+#: classes/PodsAdmin.php:1915 classes/PodsI18n.php:169 classes/PodsUI.php:757
+#: classes/PodsUI.php:760 classes/PodsUI.php:4460 includes/access.php:1916
+#: src/Pods/Admin/Config/Pod.php:248 src/Pods/Blocks/Types/View.php:167
+msgid "View"
+msgstr "Anzeigen"
 
 #: classes/PodsAPI.php:6522
 msgid "Pod not allowed to be duplicated"
@@ -9840,7 +9824,7 @@ msgstr "Duplizieren"
 msgid "Reorder"
 msgstr "Anordnen"
 
-#: classes/Pods.php:4473 src/Pods/Admin/Config/Pod.php:1637
+#: classes/Pods.php:4477 src/Pods/Admin/Config/Pod.php:1637
 #: src/Pods/Tools/Repair.php:159 src/Pods/Tools/Repair.php:328
 #: src/Pods/Tools/Repair.php:404 src/Pods/Tools/Repair.php:603
 #: src/Pods/Tools/Repair.php:711 src/Pods/Tools/Repair.php:825
@@ -9855,13 +9839,13 @@ msgstr "ID"
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: classes/Pods.php:4581 classes/PodsAdmin.php:1346 classes/PodsUI.php:4544
+#: classes/Pods.php:4585 classes/PodsAdmin.php:1346 classes/PodsUI.php:4544
 #: src/Pods/Admin/Config/Pod.php:1586 ui/admin/view.php:85
 #: ui/forms/type/post.php:134
 msgid "Delete"
 msgstr "Löschen"
 
-#: classes/Pods.php:4084 classes/PodsAdmin.php:797 classes/PodsForm.php:399
+#: classes/Pods.php:4088 classes/PodsAdmin.php:797 classes/PodsForm.php:399
 #: ui/admin/components-admin.php:113
 msgid "Save Changes"
 msgstr "Änderungen speichern"
@@ -9877,7 +9861,7 @@ msgstr "Alle"
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: classes/Pods.php:4574 src/Pods/Admin/Config/Pod.php:1588
+#: classes/Pods.php:4578 src/Pods/Admin/Config/Pod.php:1588
 msgid "Export"
 msgstr "Export"
 
@@ -9891,7 +9875,7 @@ msgstr "Export"
 msgid "Name"
 msgstr "Name"
 
-#: classes/Pods.php:3540 classes/PodsI18n.php:173 classes/PodsUI.php:759
+#: classes/Pods.php:3544 classes/PodsI18n.php:173 classes/PodsUI.php:759
 #: classes/PodsUI.php:2993 classes/PodsUI.php:3268
 #: src/Pods/Admin/Config/Pod.php:319
 msgid "Search"
@@ -9909,7 +9893,7 @@ msgstr "Geschlossen"
 msgid "Help"
 msgstr "Hilfe"
 
-#: classes/Pods.php:3390
+#: classes/Pods.php:3394
 msgid "&laquo; First"
 msgstr "&laquo; Erste Seite"
 
@@ -9917,7 +9901,7 @@ msgstr "&laquo; Erste Seite"
 msgid "Upgrade"
 msgstr "Aktualisierung"
 
-#: classes/Pods.php:4121
+#: classes/Pods.php:4125
 msgid "Form submitted successfully"
 msgstr "Formular erfolgreich übermittelt"
 
@@ -9959,7 +9943,7 @@ msgstr "Feld nicht gefunden"
 #: components/Builder/modules/form/PodsBuilderModuleForm.php:87
 #: components/Builder/modules/list/PodsBuilderModuleList.php:90
 #: components/Builder/modules/single/PodsBuilderModuleSingle.php:86
-#: src/Pods/Whatsit/Store.php:105 ui/admin/settings-reset.php:134
+#: src/Pods/Whatsit/Store.php:105 ui/admin/settings-reset.php:140
 #: ui/admin/settings-tools.php:127 ui/admin/widgets/field.php:32
 #: ui/admin/widgets/form.php:32 ui/admin/widgets/list.php:34
 #: ui/admin/widgets/single.php:34
@@ -10138,7 +10122,7 @@ msgstr "Pod %s kann nicht umbenannt werden, er erweitert ein bestehendes WP-Obje
 msgid "Name must be given to save an Object"
 msgstr "Der Name muss angegeben werden, um ein Objekt zu speichern"
 
-#: classes/PodsAPI.php:5349 classes/PodsMeta.php:2661
+#: classes/PodsAPI.php:5349 classes/PodsMeta.php:2678
 msgid "There was an issue validating the field %s"
 msgstr "Es gab ein Problem bei der Validierung des Feldes %s"
 
@@ -10251,7 +10235,7 @@ msgstr "Diese Option wird durch Zugriffsbeschränkungen außer Kraft gesetzt. We
 msgid "Allow in Tag Cloud Widget"
 msgstr "Im Schlagwort-Wolken-Widget zulassen"
 
-#: classes/Pods.php:3393
+#: classes/Pods.php:3397
 msgid "Last &raquo;"
 msgstr "Letzte &raquo;"
 
@@ -10366,11 +10350,11 @@ msgstr "Dieser Pod besitzt bereits ein internes WordPress-Permalink-Feld"
 msgid "Uses these capabilities for access to this post type: edit_{capability}, read_{capability}, and delete_{capability}"
 msgstr "Verwendet diese Berechtigungen für den Zugriff auf diesen Inhaltstyp: edit_{capability}, read_{capability}, and delete_{capability}"
 
-#: classes/Pods.php:3391
+#: classes/Pods.php:3395
 msgid "&lsaquo; Previous"
 msgstr "&lsaquo; Vorherige Seite"
 
-#: classes/Pods.php:3392
+#: classes/Pods.php:3396
 msgid "Next &rsaquo;"
 msgstr "Nächste Seite &rsaquo;"
 
@@ -10378,7 +10362,7 @@ msgstr "Nächste Seite &rsaquo;"
 msgid "Please choose whether to Create or Extend a Content Type"
 msgstr "Bitte entscheide, ob ein Inhaltstyp erstellt oder erweitert werden soll"
 
-#: classes/Pods.php:3388
+#: classes/Pods.php:3392
 msgid "Go to page:"
 msgstr "Gehe zu Seite:"
 

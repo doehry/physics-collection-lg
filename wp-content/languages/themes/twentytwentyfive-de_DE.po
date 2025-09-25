@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Twenty Twenty-Five package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-05-18 10:48:32+0000\n"
+"PO-Revision-Date: 2025-08-16 18:02:18+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,6 +23,16 @@ msgstr "Twenty Twenty-Five legt Wert auf Einfachheit und Anpassbarkeit. Es biete
 #, gp-priority: high
 msgid "Twenty Twenty-Five"
 msgstr "Twenty Twenty-Five"
+
+#: patterns/template-home-vertical-header-blog.php
+msgctxt "Pattern title"
+msgid "Right-aligned home"
+msgstr "Rechtsbündiger Start"
+
+#: patterns/template-archive-vertical-header-blog.php
+msgctxt "Pattern title"
+msgid "Right-aligned archive"
+msgstr "Rechtsbündiges Archiv"
 
 #: patterns/template-search-text-blog.php
 msgctxt "Pattern title"
@@ -744,6 +754,11 @@ msgstr "Fotoblog-Archiv"
 msgctxt "Pattern title"
 msgid "News blog archive"
 msgstr "Nachrichten-Blogarchiv"
+
+#: patterns/template-404-vertical-header-blog.php
+msgctxt "Pattern title"
+msgid "Right-aligned 404"
+msgstr "Rechtsbündige 404"
 
 #: patterns/services-team-photos.php:50
 msgid "Man in hat, standing in front of a building."
@@ -1924,7 +1939,7 @@ msgstr "Dies sind einige der kommenden Veranstaltungen"
 
 #: patterns/cta-events-list.php:19
 msgid "Upcoming events"
-msgstr "Anstehende Veranstaltungen"
+msgstr "Bevorstehende Veranstaltungen"
 
 #: patterns/cta-events-list.php
 msgctxt "Pattern description"
